@@ -1,0 +1,103 @@
+---
+title: "Fatal Alerts"
+
+description: "Configure email notifications for calls identified as fatal incidents."
+---
+
+# Fatal Alerts
+
+## What are Fatal Alerts?
+
+Fatal Alerts help **supervisors stay informed about fatal calls** by sending an email notification when a call is identified and scored as a **fatal incident**.
+
+The notification contains the call's **report and summary**, allowing supervisors to review the incident and take the necessary action.
+
+## How to Configure Fatal Alerts
+
+<Steps>
+
+  <Step title="Open Mail Config">
+
+    Open the **Mail Config** page from the menu.
+
+    ![Mail Config page](/Images/FatalAlerts/Mail_Config.png)
+
+  </Step>
+
+  <Step title="Open Fatal Alerts">
+
+    On the **Reports Subscriptions** page, click the **Fatal Alerts** tab.
+
+    ![Fatal Alerts tab](/Images/FatalAlerts/Mail_Config_FA.png)
+
+  </Step>
+
+  <Step title="Enable Fatal Incident Alerts">
+
+    Turn on the **Fatal Incident Alerts** toggle.
+
+    Once enabled, Xperia can send email notifications when a call is identified as a fatal incident.
+
+    ![Enable Fatal Alerts](/Images/FatalAlerts/Mail_Config_togglebtn.png)
+
+  </Step>
+
+  <Step title="Add Recipient Email">
+
+    Under **Recipients (To)**, enter the email address that should receive fatal incident notifications.
+
+    Click the **+** button to add the email address.
+
+    You can add multiple recipient email addresses if required.
+
+    ![Add recipient email](/Images/FatalAlerts/Mail_Config_recipientemail.png)
+
+  </Step>
+
+  <Step title="Add CC Recipients">
+
+    If another person should receive a copy of the notification, enter their email address under **CC Recipients**.
+
+    Click the **+** button to add the email address.
+
+    **CC Recipients are optional.**
+
+    ![Add CC recipient](/Images/FatalAlerts/Mail_Config_ccrecipient.png)
+
+  </Step>
+
+  <Step title="Save Your Changes">
+
+    Click **Save changes** to save the Fatal Alerts configuration.
+
+    ![Save Fatal Alerts](/Images/FatalAlerts/Mail_Config_savebtn.png)
+
+  </Step>
+
+</Steps>
+
+## How It Works
+
+Once Fatal Alerts are configured, Xperia automatically monitors the results of uploaded calls.
+
+When a call is identified as a **fatal incident**, Xperia sends an email notification to the configured recipients.
+
+The notification process is:
+
+**Call Uploaded → Call Analyzed → Fatal Incident Detected → Email Alert Sent → Supervisor Reviews Call**
+
+The supervisor can then review the **call report and summary** included in the notification.
+
+> **Note:** Fatal Alert emails are sent only when Fatal Alerts are enabled and at least one recipient email address has been configured and saved.
+
+## Recipient Settings
+
+| Setting | Description |
+|---|---|
+| **Fatal Incident Alerts** | Enables or disables fatal incident email notifications. |
+| **Recipients (To)** | Email addresses that receive the fatal incident notification. |
+| **CC Recipients** | Optional email addresses that receive a copy of the notification. |
+| **+** | Adds the entered email address to the recipient list. |
+| **Save changes** | Saves the Fatal Alerts configuration. |
+
+> **Note:** If no recipient email address is configured, no Fatal Alert email will be sent.

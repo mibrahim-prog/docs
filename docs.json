@@ -13,9 +13,10 @@
       {
         "group": "Getting Started",
         "pages": [
-          "index",
-          "quickstart",
-          "audioConfig"
+          "introduction",
+          "specializaParameters",
+          "audioConfig",
+          "Fatal_Alerts"
         ]
       }
     ],
@@ -23,33 +24,32 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "/",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://xperia.najoomi.ai/blogs",
           "icon": "newspaper"
         }
       ]
     }
   },
+
+ 
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/XperianewLogo.png",
+    "dark": "/logo/XperianewLogo.png"
   },
+  
+  
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello@najoomi.ai"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -65,9 +65,11 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/najoomitech",
+      "linkedin": "https://www.linkedin.com/checkpoint/challenge/AQH8oBx9lOFQCwAAAaDSAWlKw7uUJJfd52qExbenpgr5du6H5QFtg0R2GThy16wEMI9kqkhWB34tvdNbwG-VRfT5xupCNw/?ut=039V0qsExFhYs1",
+      "facebook": "https://www.facebook.com/people/Najoomi/61571355689803/",
+      "youtube": "https://www.youtube.com/@NajoomiTechnologies",
+      "instagram": "https://www.instagram.com/najoomitechnologies/"
     }
   }
 }

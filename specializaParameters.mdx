@@ -1,0 +1,184 @@
+---
+title: "Specialized Parameters"
+description: "Create Fatal Incidents and Trackers to monitor important call conditions."
+---
+
+# Specialized Parameters
+
+## What are Specialized Parameters?
+
+Specialized Parameters help you monitor specific things that happen during calls.
+
+There are two types:
+
+- **Fatal Incidents** — serious issues that can make a call invalid.
+- **Trackers** — specific things you want to monitor for insights without affecting the agent's score.
+
+---
+
+## Fatal Incidents
+
+Fatal Incidents are serious issues, such as **abusive language** or a **missed disclosure**, that should not happen on a call.
+
+If a Fatal Incident is detected, the call is **voided and scored zero**.
+
+Adding Fatal Incidents is free.
+
+### How to Add a Fatal Incident
+
+<Steps>
+
+<Step title="Open Specialized Parameters">
+
+Open **Specialized Parameters** from the menu.
+
+![Open Specialized Parameters](\Images\SpecializeParameter\OpenSpecializepara.png)
+
+</Step>
+
+<Step title="Open Fatal Incidents">
+
+The **Fatal Incidents** tab is selected automatically.
+
+![Fatal Incidents tab](\Images\SpecializeParameter\Fatal-Incident.png)
+
+</Step>
+
+<Step title="Click Add Condition">
+
+Click **Add Condition** to create a new Fatal Incident.
+
+![Add Condition button](/Images/SpecializeParameter/FI-Addbtn.png)
+
+</Step>
+
+<Step title="Enter the Condition Name & Add the Trigger Description" >
+
+Enter a name for the condition.
+
+Add a short description explaining what should trigger the condition.
+
+For example:
+
+**Agent Used Abusive Language**
+
+**Agent uses abusive, insulting, or inappropriate language.**
+
+![Condition name](/Images/SpecializeParameter/FI-Enterfield.png)
+
+
+
+</Step>
+
+
+
+<Step title="Save the Condition">
+
+Save the condition to add it to your Fatal Incidents.
+
+![Save Fatal Incident](/Images/SpecializeParameter/FI-Save.png)
+
+</Step>
+
+</Steps>
+
+---
+
+## Trackers
+
+Trackers are specialized parameters that you can watch on every call.
+
+For example, you can create a Tracker for **churn risk**.
+
+Trackers are used for insights and **do not affect the agent's score**.
+
+### How to Create a Tracker
+
+<Steps>
+
+<Step title="Open the Trackers Tab">
+
+Go to the **Trackers** tab under Specialized Parameters.
+
+![Trackers tab](/Images/SpecializeParameter/Trackers.png)
+
+</Step>
+
+<Step title="Click Create Specialized Parameter">
+
+Click **Create Specialized Parameter**.
+
+![Create Specialized Parameter button](/Images/SpecializeParameter/Tracker-Addbtn.png)
+
+</Step>
+
+<Step title="Enter the Parameter Name">
+
+Enter a name for your specialized parameter.
+
+For example:
+
+**Churn Risk**
+
+![Parameter name](/Images/SpecializeParameter/EnterName.png)
+
+</Step>
+
+<Step title="Add a Description">
+
+Add a short description explaining what the parameter is about.
+
+![Parameter description](/Images/SpecializeParameter/Enterdescription.png)
+
+</Step>
+
+<Step title="Select Indicators">
+
+Choose the indicators you want to track.
+
+You can select:
+
+- **Warning Sign**
+- **Positive Signal**
+
+![Select indicators](/Images/SpecializeParameter/Selectindicator.png)
+
+</Step>
+
+<Step title="Click Generate">
+
+Click **Generate** to create the parameter description based on your information.
+
+![Generate parameter](/Images/SpecializeParameter/Clickgenerate.png)
+
+</Step>
+
+<Step title="Click Add Parameter">
+
+Review the generated information and click **Add Parameter**.
+
+Your new Tracker will be added to the list.
+
+![Add Parameter button](/Images/SpecializeParameter/ClickAddpara.png)
+
+</Step>
+
+</Steps>
+
+---
+
+## How They Work
+
+### Fatal Incidents
+
+If a configured Fatal Incident is detected:
+
+**Call → Fatal Incident detected → Call is voided → Score = 0**
+
+### Trackers
+
+If a Tracker is detected:
+
+**Call → Tracker detected → Insight is recorded → Agent score is not affected**
+
+> **Note:** Fatal Incidents can affect the call score, while Trackers are used only for insights and do not affect the agent's scoring.

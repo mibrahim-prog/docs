@@ -1,82 +1,61 @@
 ---
-title: "Audio Config"
-description: "Configure which audio channel belongs to the agent and customer."
+title: "Audio Configuration"
+description: "Choose which audio channel is used for the agent and customer."
 ---
 
-# Audio Config
 
-## What is Audio Config?
 
-Audio Config allows you to manage how Xperia identifies the **agent's voice** and the **customer's voice** in a call recording.
+# Audio Configuration
 
-You can choose whether the **agent's voice is on the Left channel or Right channel**.
+## What is Audio Configuration?
 
-Once the configuration is saved, it will be applied to newly uploaded calls.
+Audio Configuration helps Xperia know **which voice is the agent** and **which voice is the customer** in a call.
 
----
+You can choose if the agent's voice is on the **Left channel** or **Right channel**.
 
 ## How to Configure Audio
 
-### Step 1: Open Audio Config
+<Steps>
+  <Step title="Open Audio Config">
+    Open the **Audio Config** page from the menu.
 
-Go to the **Audio Config** page.
+    ![Audio Config page](/Images/Click_AudioConfig.png)
+  </Step>
+  <Step title="Click Edit Setting">
+    Click the **Edit Setting** button.
 
-![Audio Config page](/Images/step1.png)
+    ![Edit Setting button](/Images/Click_EditButton.png)
+  </Step>
+  <Step title="Turn On the Toggle">
+    Turn on the **Dual-channel (stereo) recordings** toggle.
 
----
+    ![Dual-channel toggle](/Images/Click_toggle.png)
+  </Step>
+  <Step title="Choose the Agent Channel">
+    Select either the **Left channel** or **Right channel** for the agent.
 
-### Step 2: Click Edit Setting
+    ![Choose agent channel](/Images/Select_LCRC.png)
+  </Step>
+  <Step title="Save Your Changes">
+    Click **Save Changes** to save your settings.
 
-Under **Recording Channels**, click the **Edit Setting** button.
-
-![Click Edit Setting](/images/audio-config-edit.png)
-
----
-
-### Step 3: Turn On the Toggle
-
-Turn on the **Dual-channel (stereo) recordings** toggle.
-
-![Turn on toggle](/images/audio-config-toggle.png)
-
----
-
-### Step 4: Select the Agent Channel
-
-Choose which channel contains the agent's voice:
-
-**Which channel is the agent on?**
-
-- **Left channel** — Select this if the agent's voice is on the left channel.
-- **Right channel** — Select this if the agent's voice is on the right channel.
-
-![Select agent channel](/images/audio-config-channel.png)
-
----
-
-### Step 5: Save the Changes
-
-Click **Save** to apply your Audio Config settings.
-
-After saving, the configuration will be used for **new calls that are uploaded or imported**.
-
----
+    ![Save Changes button](/Images/Click_SaveButton.png)
+  </Step>
+</Steps>
 
 ## How It Works
 
-Once the configuration is saved and a call is uploaded:
+After you save the settings and upload a new call:
 
-- The selected channel is treated as the **agent's voice**.
-- The other channel is treated as the **customer's voice**.
+- The channel you selected is the **agent's voice**.
+- The other channel is the **customer's voice**.
 
 For example:
 
-**Agent → Left**  
-**Customer → Right**
+**Agent → Left channel**<br />**Customer → Right channel**
 
 or
 
-**Agent → Right**  
-**Customer → Left**
+**Agent → Right channel**<br />**Customer → Left channel**
 
-> **Note:** This configuration applies to new calls. Existing call scores are not changed.
+> **Note:** These settings apply to new calls. Existing call scores are not changed.
