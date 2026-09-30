@@ -1,61 +1,82 @@
 ---
+
 title: "Audio Configuration"
-description: "Choose which audio channel is used for the agent and customer."
+
+description: "Configure how Xperia identifies the agent and customer audio channels."
+
 ---
-
-
 
 # Audio Configuration
 
 ## What is Audio Configuration?
 
-Audio Configuration helps Xperia know **which voice is the agent** and **which voice is the customer** in a call.
+Audio Configuration helps Xperia correctly distinguish between the **agent's voice** and the **customer's voice** in a call recording.
 
-You can choose if the agent's voice is on the **Left channel** or **Right channel**.
+In dual-channel (stereo) recordings, the agent and customer voices are recorded on separate audio channels. Depending on how the recording was created, the agent's voice may be on either the **Left channel** or the **Right channel**.
+
+This feature allows you to tell Xperia which channel contains the **agent's voice**, so Xperia can correctly identify the agent and customer voices when processing new calls.
 
 ## How to Configure Audio
 
 <Steps>
+
   <Step title="Open Audio Config">
+
     Open the **Audio Config** page from the menu.
 
     ![Audio Config page](/Images/Click_AudioConfig.png)
+
   </Step>
+
   <Step title="Click Edit Setting">
-    Click the **Edit Setting** button.
+
+    Click the **Edit Setting** button to modify the audio configuration.
 
     ![Edit Setting button](/Images/Click_EditButton.png)
+
   </Step>
+
   <Step title="Turn On the Toggle">
-    Turn on the **Dual-channel (stereo) recordings** toggle.
+
+    Turn on the **Dual-channel (stereo) recordings** toggle to enable separate audio channels for the agent and customer.
 
     ![Dual-channel toggle](/Images/Click_toggle.png)
+
   </Step>
+
   <Step title="Choose the Agent Channel">
-    Select either the **Left channel** or **Right channel** for the agent.
+
+    Select the **Left** or **Right channel** based on which channel contains the **agent's voice** in the recording.
 
     ![Choose agent channel](/Images/Select_LCRC.png)
+
   </Step>
+
   <Step title="Save Your Changes">
-    Click **Save Changes** to save your settings.
+
+    Click **Save Changes** to save the audio configuration.
 
     ![Save Changes button](/Images/Click_SaveButton.png)
+
   </Step>
+
 </Steps>
 
 ## How It Works
 
-After you save the settings and upload a new call:
+Once the audio configuration is saved, Xperia uses the selected channel to identify the **agent's voice** when processing new call recordings.
 
-- The channel you selected is the **agent's voice**.
-- The other channel is the **customer's voice**.
+- The channel you select is treated as the **agent's voice**.
+- The other channel is automatically treated as the **customer's voice**.
 
 For example:
 
-**Agent → Left channel**<br />**Customer → Right channel**
+**Agent → Left channel**  
+**Customer → Right channel**
 
 or
 
-**Agent → Right channel**<br />**Customer → Left channel**
+**Agent → Right channel**  
+**Customer → Left channel**
 
-> **Note:** These settings apply to new calls. Existing call scores are not changed.
+> **Note:** These settings apply to **newly uploaded calls**. They do not change the audio configuration or scores of existing calls.
