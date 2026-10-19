@@ -13,6 +13,7 @@
       {
         "group": "Getting Started",
         "pages": [
+          "dashboard",
           "introduction",
           "specializaParameters",
           "audioConfig",

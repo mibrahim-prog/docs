@@ -1,0 +1,261 @@
+---
+title: "Dashboard"
+description: "Learn how to monitor call-center performance, review custom parameter results, and investigate specialized parameter matches in Xperia."
+---
+
+# Dashboard
+
+## Overview
+
+The Xperia Dashboard provides a centralized view of call activity and analysis results for your account or organization. It helps you monitor uploaded calls, review call scores, compare agent performance, and investigate important events identified during call analysis.
+
+The dashboard contains three main tabs:
+
+- **Analytics:** Review overall call metrics, scoring trends, agent performance, and category-level results.
+- **Custom Parameters:** Review custom parameter results, total values, and pass rates.
+- **Specialized Parameters:** Monitor important events and behaviors and investigate calls matching specific specialized parameters.
+
+## Dashboard Filters
+
+Use the filters at the top of the dashboard to narrow the displayed results.
+
+- **Call Type:** Filter calls by type, such as Human.
+- **Department:** Select a specific department or All Departments.
+- **Agent:** Select an individual agent or All Agents.
+- **Time Range:** Choose the reporting period, such as Last 30 Days.
+
+These filters help you focus on the calls and performance data relevant to your analysis.
+
+## Analytics
+
+The Analytics tab provides an overview of call-center performance for the selected filters.
+
+![Xperia Analytics Dashboard](/images/Dashboard/DB-Analytics.png)
+
+### Performance Summary Cards
+
+The dashboard displays four key metrics:
+
+- **Total Calls:** The total number of calls included in the selected reporting period.
+- **Average Score:** The average score of the calls included in the results.
+- **Dead Calls:** The number of calls classified as dead calls.
+- **Fatal Incidents:** The number of calls associated with fatal incidents.
+
+These metrics help you understand call volume, overall performance, and incidents that may require further investigation.
+
+### Score Trend
+
+The Score Trend chart helps you understand how call scores change over time. It displays scoring results across the selected reporting period, allowing you to track performance and identify changes in call quality.
+
+![Xperia Analytics Dashboard](/images/Dashboard/DB-ScoreTrend.png)
+
+**How to understand the chart:**
+
+- **Horizontal Axis (X-axis):** Displays the timeline for the selected reporting period.
+- **Vertical Axis (Y-axis):** Represents the call scores shown in the chart.
+- **Trend Line:** Shows how scores change from one point in time to another.
+- **Data Point Details:** Hover over a point, when supported, to view the corresponding period and score.
+
+**How to use Score Trend:**
+
+1. Select the required Call Type, Department, Agent, and Time Range filters.
+2. Review the trend line to understand how scores change throughout the selected period.
+3. Identify periods where scores increase or decrease noticeably.
+4. Compare different periods or filter selections to investigate changes in performance.
+5. Review calls from periods with noticeable changes to understand what may have contributed to the results.
+
+For example, if the trend line decreases during a particular period, you can review calls from that period to investigate possible reasons for the lower scores.
+
+The chart helps identify patterns, but it does not independently explain why a score changed. Review the relevant calls and scoring details to investigate further.
+
+### Agent Analytics
+
+Agent Analytics helps you compare call-scoring performance across agents. The chart displays agent names alongside their corresponding scores, making it easier to identify differences in performance.
+
+![Xperia Analytics Dashboard](/images/Dashboard/DB-AgentAnalytics.png)
+
+**How to understand the chart:**
+
+- **Agent Names:** Identify the agents included in the displayed results.
+- **Horizontal Bars:** Represent the displayed score for each agent.
+- **Score Axis:** Helps you compare the scores shown on the chart.
+- **Show Selector:** Allows you to choose how many agents to display, when available.
+- **Pagination Controls:** Allow you to navigate through additional agents when the results span multiple pages.
+
+**How to use Agent Analytics:**
+
+1. Select the required Call Type, Department, and Time Range filters.
+2. Review the bars to compare the displayed scores across agents.
+3. Use the Show selector to change the number of agents displayed, if available.
+4. Use the pagination controls to review agents who are not visible on the current page.
+5. Identify agents whose scores may require further review.
+6. Review the associated calls and category scores to understand the factors affecting the results.
+
+For example, if one agent has a lower displayed score than other agents, review that agent's calls and category scores to identify areas that may need attention.
+
+When comparing agents, consider the selected filters and the amount of call data available for each agent. A difference in scores does not necessarily mean that one agent is performing poorly in every situation.
+
+### Score Distribution
+
+The Score Distribution chart shows how calls are spread across different score ranges. It helps you understand the overall scoring pattern instead of looking only at the average score.
+
+![Xperia Analytics Dashboard](/images/Dashboard/DB-ScoreDis.png)
+
+**How to understand the chart:**
+
+- **Horizontal Axis (X-axis):** Groups calls into score ranges, such as 45–50, 55–60, or 85–90, depending on the displayed chart.
+- **Vertical Axis (Y-axis):** Shows the number of calls within each score range.
+- **Bars:** Represent the number of calls belonging to each score range.
+- **Taller Bars:** Indicate that more calls fall within that range.
+- **Shorter Bars:** Indicate that fewer calls fall within that range.
+
+**How to use Score Distribution:**
+
+1. Apply the filters for the calls you want to analyze.
+2. Review which score ranges have the tallest bars.
+3. Identify whether most calls fall within higher, middle, or lower score ranges.
+4. Look for score ranges containing calls that may need additional investigation.
+5. Review individual calls and their scoring details to understand the results.
+
+For example, if most calls fall within the 85–90 score range, the chart indicates that this is a common score range for the selected results. If a noticeable number of calls fall within lower score ranges, you can investigate those calls to identify possible scoring or performance issues.
+
+Score Distribution complements the Average Score metric. Two groups of calls can have similar average scores but very different distributions, so reviewing both helps you understand performance more completely.
+
+### Category Scoring Overview
+
+
+Category Scoring Overview displays scoring results across available performance categories on a 0–5 scale.
+
+Depending on your configuration, categories may include:
+
+- Call Opening
+- Closing
+- Communication
+- Hold Procedure
+- Listening
+- Personalisation
+- Probing
+- Responsibility
+- Tone
+- Upselling Score
+
+Use the category selector to review the scoring results for a particular category. Compare the displayed scores to identify categories that may need further investigation.
+
+### Category Parameters
+
+The Category Parameters chart compares the average obtained score with the average possible score for individual parameters in the selected category.
+
+- **Average Obtained Score:** Shows the average score achieved for a parameter.
+- **Average Out of Score:** Shows the average possible score for that parameter.
+
+![Category Scoring Overview and Category Parameters](/images/Dashboard/DB-Category.png)
+
+Use this chart to compare actual results with possible scores, identify parameters with lower results, and determine where additional review may be useful.
+
+## Custom Parameters
+
+The Custom Parameters tab displays the custom parameters configured in Xperia and their results for the selected filters.
+
+![Xperia Custom Parameters Dashboard](/images/Dashboard/DB-Custom.png)
+
+Each parameter appears in an individual card containing information about its results.
+
+### Custom Parameter Information
+
+- **Parameter Name:** The name of the configured custom parameter.
+- **Total Values:** The number of recorded values for the parameter in the selected results.
+- **Pass Rate:** The displayed percentage of results that satisfy the parameter.
+- **True Results:** The number of results evaluated as true.
+- **Total Results:** The total number of recorded values used for comparison.
+
+### Custom Parameter Charts
+
+Each card includes a chart comparing true results with the total recorded values.
+
+For example, if a parameter has 245 total values and 224 true results, its pass rate is approximately 91%.
+
+You can compare parameter cards to understand how frequently different custom parameters are satisfied in the selected calls.
+
+## Specialized Parameters
+
+The Specialized Parameters tab displays configured specialized parameters and the calls that match them.
+
+![Xperia Specialized Parameters Dashboard](/images/Dashboard/DB-Specialize.png)
+
+These parameters help you monitor important events, risks, behaviors, and signals identified during call analysis.
+
+### Specialized Parameter Information
+
+Each card can display the following information:
+
+- **Parameter Name:** The name of the event or behavior being monitored.
+- **Flagged Percentage:** The displayed percentage of calls flagged for the parameter.
+- **Call Count:** The number of matching calls compared with the total calls shown.
+- **Progress Bar:** A visual representation of the flagged proportion.
+- **Warning Sign or Positive Signal:** An indicator representing the configured signal type.
+- **View Calls:** An option to open the associated calls for further investigation.
+
+### View Calls
+
+You can investigate calls associated with a specialized parameter directly from its dashboard card.
+
+1. Open the **Specialized Parameters** tab.
+2. Find the parameter you want to investigate.
+3. Select **View Calls** on the parameter card.
+4. Xperia navigates you to the Call Scoring page, where calls matching the selected specialized parameter are displayed.
+5. Review the available calls and their details to investigate the matching results.
+
+The displayed calls depend on the selected parameter, available call data, and applicable filters.
+
+### Add a Specialized Parameter
+
+Select **Add Parameter** to begin configuring a new specialized parameter. The available configuration options depend on your Xperia setup and permissions.
+
+## How to Use the Dashboard Effectively
+
+Follow these steps to review dashboard results and investigate areas that need attention.
+
+### 1. Select the Filters
+
+Choose the appropriate Call Type, Department, Agent, and Time Range before reviewing the charts. This helps you focus on the relevant calls and reporting period.
+
+### 2. Review Overall Call Performance
+
+Start with the summary cards in the Analytics tab. Review Total Calls, Average Score, Dead Calls, and Fatal Incidents to understand the current results.
+
+### 3. Identify Performance Trends
+
+Use Score Trend to identify changes over time, Agent Analytics to compare agents, and Score Distribution to understand how scores are spread across ranges.
+
+### 4. Review Category-Level Results
+
+Use Category Scoring Overview and Category Parameters to understand scoring performance across categories and individual parameters. Identify areas where scores may need further investigation.
+
+### 5. Analyze Custom Parameters
+
+Open the Custom Parameters tab to review parameter values, pass rates, and charts. Compare different parameters to understand how frequently they are satisfied in the selected calls.
+
+### 6. Investigate Specialized Parameters
+
+Open the Specialized Parameters tab to review flagged events and positive signals. Check the displayed percentages and call counts to identify parameters that may need attention.
+
+### 7. Open Matching Calls
+
+Select **View Calls** on a specialized parameter card to navigate to the Call Scoring page and review the calls associated with that parameter.
+
+### 8. Review Results Before Drawing Conclusions
+
+Use the charts as a starting point for investigation. Review the relevant calls, scores, and available details before deciding whether an observed change requires action.
+
+## Summary
+
+The Xperia Dashboard helps you understand call-center performance through summary metrics, scoring charts, and parameter-level results.
+
+- **Score Trend:** Helps you track changes in scores over time.
+- **Agent Analytics:** Helps you compare displayed scores across agents.
+- **Score Distribution:** Helps you understand how calls are distributed across score ranges.
+- **Category Scoring Overview and Category Parameters:** Help you examine category-level performance.
+- **Custom Parameters:** Help you review configured parameter results and pass rates.
+- **Specialized Parameters:** Help you identify important events and navigate to matching calls.
+
+By combining these views, you can move from a high-level overview to a more detailed investigation of the calls and scoring results that matter to your organization.
