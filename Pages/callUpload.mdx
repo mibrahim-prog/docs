@@ -1,0 +1,67 @@
+---
+title: "Upload Call"
+description: "Manually upload call recordings to Xperia for instant AI-driven QA scoring."
+---
+
+# Upload Call
+
+The **Upload Call** page allows you to manually submit audio recordings to Xperia. Once uploaded, Xperia immediately processes the audio and generates an AI-scored QA report.
+
+<Note>
+If you want Xperia to automatically fetch calls from your system, click **Set up Integrator** at the top of the page.
+</Note>
+
+## Step-by-Step Guide
+
+<Steps>
+  <Step title="Enter Call Details">
+    In the **Call Details** panel, select the **Agent Name** and **Department Name** from the dropdown menus. 
+
+    <Frame>
+      <img src="/Images/UploadCall/CU-CallDetails.png" alt="Selecting Agent Name and Department Name" />
+    </Frame>
+
+    Fill in the remaining required fields, such as Call Type, Recording Time, and Call Direction.
+  </Step>
+
+  <Step title="Upload the Audio File">
+    In the **Upload Recordings** panel, click **Browse Local Disk** to select your audio file, or drag and drop it into the designated area.
+
+    <Frame>
+      <img src="/Images/UploadCall/CU-UploadRecordings.png" alt="Clicking Browse Local Disk to upload a file" />
+    </Frame>
+
+    <Warning>
+    Files must be in **MP3** or **WAV** format and cannot exceed **50 MB** each.
+    </Warning>
+  </Step>
+
+  <Step title="Submit the Call">
+    Click the yellow **Submit** button. A toast notification will appear in the top-right corner confirming the file (e.g., `18000821.wav`) has been uploaded.
+    <Frame>
+      <img src="/Images/UploadCall/CU-SubmitButton.png" alt="Clicking the Submit button" />
+    </Frame>
+  </Step>
+
+  <Step title="Review the Upload Successful Modal">
+    Once the upload is complete, an **Upload Successful** modal appears.
+
+    <Frame>
+      <img src="/Images/UploadCall/CU-UploadSuccessful.png" alt="The Upload Successful confirmation modal" />
+    </Frame>
+
+    This modal confirms the following:
+    - **Status:** The number of calls uploaded successfully (e.g., *1 of 1 call uploaded successfully*).
+    - **Processing:** Xperia is now scoring the call.
+    - **Automation:** A prompt asking if you want to upload calls automatically next time, with a link to the **Integrator page**.
+
+    Choose one of the following actions:
+    - Click **Close** to dismiss the modal and remain on the Upload Call page.
+    - Click **Go to Scoring** to navigate directly to the QA report generation page.
+  </Step>
+</Steps>
+
+## Related Topics
+
+- [Call Scoring](/call-scoring) — Understand how Xperia evaluates and scores your uploaded calls.
+- [Integrator](/integrator) — Automate call fetching and skip manual uploads.

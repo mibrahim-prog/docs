@@ -1,0 +1,212 @@
+---
+title: "Call Scoring"
+description: "Review, filter, and analyze AI-scored QA reports for uploaded calls."
+---
+
+# Call Scoring
+
+The **Call Scoring** page acts as your central hub for reviewing agent performance. Once a call is uploaded and processed by Xperia, it appears here with an AI-generated QA score, detailed insights, and category breakdowns.
+
+## Call Scoring Dashboard
+
+The main dashboard displays a paginated table of all processed calls. At the top, you can quickly view call volumes categorized by their current workflow status:
+
+- **Total:** All calls in the system.
+- **New:** Calls that have just been scored and have not been opened yet.
+- **Viewed:** Calls that have been opened but not acted upon.
+- **Reviewed:** Calls that have been marked as reviewed by a manager.
+- **Updated:** Calls where scores have been manually adjusted.
+- **Appealed for Review:** Calls where the agent has disputed the AI score.
+- **Appeal Resolved:** Appeals that have been finalized.
+
+### Table Columns
+
+| Column | Description |
+|---|---|
+| **File Name** | The original name of the uploaded audio file. |
+| **Agent Name** | The agent associated with the call. |
+| **Recording Time & Date** | When the call originally took place. |
+| **Completion Time & Date** | When Xperia finished AI processing the call. |
+| **Duration(s)** | Length of the call. |
+| **Obtained Score** | The score the agent achieved. *Note: Scores flagged as **Fatal Incident** appear in red text, indicating critical compliance failures.* |
+| **Total** | The maximum possible score for the call based on the active parameters. |
+| **Status** | The current review state of the call (e.g., New, Updated, Viewed). |
+
+<Note>
+To download multiple reports at once, click the **Bulk Download** button at the top of the table.
+</Note>
+
+## Filtering and Downloading Calls
+
+To locate specific calls, click the **Filters** button. A modal will appear allowing you to narrow down the results:
+
+<Frame>
+  <img src="/Images/CallScoring/CS-FilterModal.png" alt="Call Scoring Filter Modal" />
+</Frame>
+
+- **Search By:** Toggle between searching by File Name or Agent Name.
+- **Call Type:** Filter between Human and AI Calls.
+- **Status:** Select specific statuses (e.g., select **Updated** to view only calls that have been manually edited).
+- **Sort By & Order:** Organize the list by Completion Time, Score, etc., in Ascending or Descending order.
+- **Date Filter:** Filter calls by Recording Time (None, Single Date, or a Date Range).
+- **Call Flag:** Filter by specific flags, such as Fatal Incidents.
+- **Specialized Parameter:** Filter calls that failed or passed specific parameters.
+- **Appeals:** Toggle to view only calls that have been appealed or resolved.
+
+Click **Apply Filters** to update the table.
+
+### Managing Active Filters
+
+Once filters are applied, a green **Filters applied** banner will appear above the table. 
+
+- **Filter by Agent Name:** Enter an agent's name to instantly isolate all calls associated with them.
+- **Filter by Status:** Select a status like "Updated" to only show calls that have been modified.
+- **Clear Filters:** To remove a specific filter, click the **X** on the filter pill. To remove all filters, click **Clear all**.
+
+### Downloading Filtered Data
+
+Instead of downloading your entire database, you can export exactly what you have filtered. Use the arrows to see how to filter by status or agent name.
+
+<ImageArrowSlider />
+
+1. Once your filters are applied, locate the yellow **Download Filtered Data** button on the right side of the screen.
+2. Click the dropdown arrow next to the button.
+3. Select your preferred format:
+   - **CSV:** For spreadsheet analysis.
+   - **PDF:** For a formatted, shareable document.
+
+<Note>
+The export will only include the rows currently matching your active filters. For example, if you filter by an Agent Name and click download, the file will only contain that specific agent's calls.
+</Note>
+
+## Reviewing a Call (File Report)
+
+To see the detailed breakdown of a call, click on any row in the table. This opens the **File Report** page.
+
+<Frame>
+  <img src="/Images/CallScoring/CS-ReviewingCall.png" alt="Detailed File Report view" />
+</Frame>
+
+### 1. Header Actions
+At the top right, you have several actions:
+- **Download (Icon):** Export the report as a **PDF** or **CSV** file.
+- **Mark as Reviewed:** Change the status of the call to "Reviewed" to indicate the QA check is complete.
+- **Edit:** Manually adjust the AI-generated scores if necessary.
+
+### 2. Call Details & Audio
+The left panel contains the call metadata (File Name, Agent, Department, Work Code, Duration) and an embedded audio player so you can listen to the recording while reviewing the score.
+
+### 3. Scoring Breakdown
+The right panel displays the performance criteria (e.g., Call Opening, Closing, Communication, Hold, Listening). It shows the **Obtained Score** versus the **Out Of** maximum for each category. The **Total Score** is displayed at the bottom.
+
+### 4. AI Insights
+Below the metadata, Xperia provides three expandable sections based on the conversation:
+- **Summary:** A brief overview of the call's purpose and outcome.
+- **Reasoning:** A detailed explanation of why the agent received their specific scores, including areas of improvement.
+- **Suggestion:** Actionable coaching advice for the agent to improve future calls.
+
+<Tip>
+If a crucial behavior was missed, click **Add parameter** at the bottom of the report to create a new custom evaluation metric for future calls.
+</Tip>
+
+## Related Topics
+
+- [Custom Parameters](/Pages/customParameters) — Create new evaluation criteria.
+- [Specialized Parameters](/Pages/specializaParameters) — Explore predefined evaluation criteria.
+- [Upload Call](/Pages/callUpload) — Upload new recordings for scoring.
+
+{/* DO NOT REMOVE THIS COMPONENT - IT MAKES THE ARROWS WORK */}
+export function ImageArrowSlider() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = [
+    {
+      src: "/Images/CallScoring/CS-UpdatedDownload.png",
+      alt: "Filtering by Updated Status",
+      caption: "Example 1: Filtering by Updated Status"
+    },
+    {
+      src: "/Images/CallScoring/CS-AgentDownload.png",
+      alt: "Filtering by Agent Name",
+      caption: "Example 2: Filtering by Agent Name"
+    }
+  ];
+
+  return (
+    <div className="my-8 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 bg-white dark:bg-zinc-900 shadow-sm">
+      <div className="flex items-center justify-between gap-4">
+        
+        {/* Left Arrow Button */}
+        <button
+          type="button"
+          onClick={() => setCurrentImage(currentImage - 1)}
+          disabled={currentImage === 0}
+          className="flex-shrink-0 w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-xl text-zinc-600 dark:text-zinc-400 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          aria-label="Previous Image"
+        >
+          &#8592;
+        </button>
+
+        {/* Image Display */}
+        <div className="flex-1 flex flex-col items-center">
+          <img
+            src={images[currentImage].src}
+            alt={images[currentImage].alt}
+            className="w-full h-auto max-h-[350px] object-contain rounded-lg border border-zinc-100 dark:border-zinc-800"
+          />
+          <p className="mt-3 text-sm font-medium text-zinc-500 dark:text-zinc-400">
+            {images[currentImage].caption}
+          </p>
+        </div>
+
+        {/* Right Arrow Button */}
+        <button
+          type="button"
+          onClick={() => setCurrentImage(currentImage + 1)}
+          disabled={currentImage === images.length - 1}
+          className="flex-shrink-0 w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center text-xl text-zinc-600 dark:text-zinc-400 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          aria-label="Next Image"
+        >
+          &#8594;
+        </button>
+
+      </div>
+    </div>
+  );
+}
+
+## Reviewing a Call (File Report)
+
+To see the detailed breakdown of a call, click on any row in the table. This opens the **File Report** page.
+
+<Frame>
+  <img src="/Images/CallScoring/CS-ReviewingCall.png" alt="Detailed File Report view" />
+</Frame>
+
+### 1. Header Actions
+At the top right, you have several actions:
+- **Download (Icon):** Export the report as a **PDF** or **CSV** file.
+- **Mark as Reviewed:** Change the status of the call to "Reviewed" to indicate the QA check is complete.
+- **Edit:** Manually adjust the AI-generated scores if necessary.
+
+### 2. Call Details & Audio
+The left panel contains the call metadata (File Name, Agent, Department, Work Code, Duration) and an embedded audio player so you can listen to the recording while reviewing the score.
+
+### 3. Scoring Breakdown
+The right panel displays the performance criteria (e.g., Call Opening, Closing, Communication, Hold, Listening). It shows the **Obtained Score** versus the **Out Of** maximum for each category. The **Total Score** is displayed at the bottom.
+
+### 4. AI Insights
+Below the metadata, Xperia provides three expandable sections based on the conversation:
+- **Summary:** A brief overview of the call's purpose and outcome.
+- **Reasoning:** A detailed explanation of why the agent received their specific scores, including areas of improvement.
+- **Suggestion:** Actionable coaching advice for the agent to improve future calls.
+
+<Tip>
+If a crucial behavior was missed, click **Add parameter** at the bottom of the report to create a new custom evaluation metric for future calls.
+</Tip>
+
+## Related Topics
+
+- [Custom Parameters](/Pages/customParameters) — Create new evaluation criteria.
+- [Specialized Parameters](/Pages/specializaParameters) — Explore predefined evaluation criteria.
+- [Upload Call](/Pages/callUpload) — Upload new recordings for scoring.

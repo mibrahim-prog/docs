@@ -13,11 +13,15 @@
       {
         "group": "Getting Started",
         "pages": [
-          "introduction",
-          "dashboard",
-          "specializaParameters",
-          "audioConfig",
-          "Fatal_Alerts"
+          "Pages/introduction",
+          "Pages/dashboard",
+          "Pages/specializaParameters",
+          "Pages/audioConfig",
+          "Pages/Fatal_Alerts",
+          "Pages/customParameters",
+          "Pages/callUpload",
+          "Pages/callScoring",
+          "Pages/agentReports"
         ]
       }
     ],
@@ -25,7 +29,7 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "/",
+          "href": "/Pages",
           "icon": "book-open-cover"
         },
         {

@@ -1,0 +1,161 @@
+---
+title: "Custom Parameters"
+description: "Create custom parameters in Xperia to evaluate specific agent behaviors during call analysis."
+---
+
+import { useState } from 'react';
+
+export function ArrowCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  const steps = [
+    {
+      title: "Step 1: Open the Parameter page",
+      text: "When you log in to the Xperia Dashboard, click on Parameter. The Parameter page opens with the Categories Weightage tab selected by default.",
+      img: "/Images/CustomParameters/CP-ClickParameter.png"
+    },
+    {
+      title: "Step 2: Select the Custom Parameter tab",
+      text: "The Parameter page contains three tabs: Categories Weightage, Custom Parameter, and Specialized Parameter. Select Custom Parameter.",
+      img: "/Images/CustomParameters/CP-CustomParameterTab.png"
+    },
+    {
+      title: "Step 3: Add a new parameter",
+      text: "Select Add Parameter to open the parameter creation dialog.",
+      img: "/Images/CustomParameters/CP-AddParameterBtn.png"
+    },
+    {
+      title: "Step 4: Select department(s) (optional)",
+      text: "In the Select Department(s) section, choose the department the parameter should apply to. Department assignment is optional.",
+      img: "/Images/CustomParameters/CP-SelectDepartment.png"
+    },
+    {
+      title: "Step 5: Enter the parameter name",
+      text: "In the Parameter Name field, enter a clear, descriptive name for the behavior to be evaluated, such as Greeting or Politeness.",
+      img: "/Images/CustomParameters/CP-Enterparametername.png"
+    },
+    {
+      title: "Step 6: Define the false condition",
+      text: "In the Mark this as False if... field, describe the situation in which the behavior should be considered negative.",
+      img: "/Images/CustomParameters/CP-EnterFalseCondition.png"
+    },
+    {
+      title: "Step 7: Configure call tracking (optional)",
+      text: "If the Track every call radio button is displayed, select or clear it according to your evaluation requirements.",
+      img: "/Images/CustomParameters/CP-TrackCall.png"
+    },
+    {
+      title: "Step 8: Generate the prompt",
+      text: "Select Generate Prompt. Xperia generates an evaluation prompt from the details you entered. Review the prompt to ensure it is accurate.",
+      img: "/Images/CustomParameters/CP-ClickNext.png"
+    },
+    {
+      title: "Step 9: Create the parameter",
+      text: "When the generated prompt is correct, select Create Parameter.",
+      img: "/Images/CustomParameters/CP-ClickCreateParameter.png"
+    },
+    {
+      title: "Step 10: Assign Categories Weightage",
+      text: "If you selected departments earlier, assign a score to your new parameter. Warning: The total weightage must equal 100/100.",
+      img: "/Images/CustomParameters/CP-ClickSave&Next.png"
+    },
+    {
+      title: "Step 11: Confirm the parameter was created",
+      text: "Xperia displays Parameter Created Successfully! Choose to Upload a Call to proceed, or Cancel to upload calls later.",
+      img: "/Images/CustomParameters/CP-ClickUploadCall.png"
+    }
+  ];
+
+  return (
+    <div className="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 my-8 bg-white dark:bg-zinc-900 shadow-sm">
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="m-0 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+          {steps[current].title}
+        </h3>
+        <span className="text-xs font-semibold bg-zinc-700 text-white px-3 py-1 rounded-full">
+          {current + 1} / {steps.length}
+        </span>
+      </div>
+      
+      <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400 min-h-[48px]">
+        {steps[current].text}
+      </p>
+      
+      <div className="flex items-center justify-between gap-4">
+        <button 
+          onClick={() => setCurrent(current - 1)} 
+          disabled={current === 0}
+          className="w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 flex items-center justify-center text-xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          aria-label="Previous Step"
+        >
+          &#8592;
+        </button>
+
+        <div className="flex-1 flex justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg p-2 bg-black">
+          <img 
+            src={steps[current].img} 
+            alt={steps[current].title}
+            className="max-w-full max-h-[400px] object-contain rounded" 
+          />
+        </div>
+
+        <button 
+          onClick={() => setCurrent(current + 1)} 
+          disabled={current === steps.length - 1}
+          className="w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 flex items-center justify-center text-xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+          aria-label="Next Step"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+  );
+}
+
+# Custom Parameters
+
+## Overview
+
+Custom Parameters allow Xperia to evaluate specific behaviors, actions, or criteria during a customer conversation. Each parameter defines a single behavior to assess and the conditions under which that behavior should be marked as incorrect.
+
+For example, a **Greeting** parameter can verify whether an agent greets the customer appropriately at the beginning of a call. You define what constitutes an incorrect greeting, and Xperia deducts marks when that condition is detected during call analysis.
+
+<Note>
+Custom parameters are scored individually and contribute to the **Categories Weightage** of the department they are assigned to. The total weightage for a department must equal **100/100**.
+</Note>
+
+## Before You Begin
+
+- You are signed in to Xperia.
+- You have identified the behavior you want to evaluate and the condition that should mark it as false.
+- You have decided whether the parameter applies to a specific department. Department assignment is optional.
+
+## Create a Custom Parameter
+
+<ArrowCarousel />
+
+## Example: Creating a Greeting Parameter
+
+To evaluate whether an agent greets the customer appropriately at the start of a call, use the following configuration:
+
+| Field | Value |
+|---|---|
+| **Parameter Name** | Greeting |
+| **Mark this as False if…** | The agent does not greet the customer appropriately at the very beginning of the call. |
+| **Department(s)** | Optional — select a department or skip this step. |
+| **Track every call** | Optional — select or clear according to your requirements. |
+
+### Finalizing the Parameter
+After entering the configuration above, complete the creation process:
+
+1. Select **Generate Prompt** and review the generated text for accuracy.
+2. Select **Create Parameter** to save it.
+3. If you assigned the parameter to a department, enter its score in the **Categories Weightage** modal. 
+   <Warning>
+   The total weightage for the department must equal exactly **100/100** to proceed.
+   </Warning>
+4. Once created, you can immediately **Upload a Call** for evaluation, or close the dialog and upload calls later.
+## Related Topics
+
+- [Specialized Parameters](/specializaParameters) — Explore predefined parameters for common evaluation criteria.
+- [Dashboard](/dashboard) — Learn more about the Xperia dashboard and its features.
