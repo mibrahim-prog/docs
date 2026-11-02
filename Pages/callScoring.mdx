@@ -1,7 +1,6 @@
-
 ---
 title: "Call Scoring"
-description: "Review, filter, and analyze AI-scored QA reports for uploaded calls."
+description: "Review AI-scored calls, manage appeals, filter reports, and download call data."
 ---
 
 # Call Scoring
@@ -66,15 +65,20 @@ Once filters are applied, a green **Filters applied** banner will appear above t
 
 ### Downloading Filtered Data
 
-Instead of downloading your entire database, you can export exactly what you have filtered. Use the screenshots below to see how to filter by status or agent name.
+Instead of downloading your entire database, export only the calls that match your filters. Scroll through the screenshots below to see how to filter by status or agent name.
 
-<Frame>
-  <img src="/Images/CallScoring/CS-UpdatedDownload.png" alt="Filtering by Updated Status" />
-</Frame>
-
-<Frame>
-  <img src="/Images/CallScoring/CS-AgentDownload.png" alt="Filtering by Agent Name" />
-</Frame>
+<div style={{ display: "flex", gap: "16px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory" }}>
+  <div style={{ flex: "0 0 85%", scrollSnapAlign: "start" }}>
+    <Frame caption="Filter calls by Updated status">
+      <img src="/Images/CallScoring/CS-UpdatedDownload.png" alt="Call table filtered by Updated status" />
+    </Frame>
+  </div>
+  <div style={{ flex: "0 0 85%", scrollSnapAlign: "start" }}>
+    <Frame caption="Filter calls by agent name">
+      <img src="/Images/CallScoring/CS-AgentDownload.png" alt="Call table filtered by agent name" />
+    </Frame>
+  </div>
+</div>
 
 1. Once your filters are applied, locate the yellow **Download Filtered Data** button on the right side of the screen.
 2. Click the dropdown arrow next to the button.
