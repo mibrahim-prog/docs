@@ -56,18 +56,6 @@
       }
     ]
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
   "footer": {
     "socials": {
       "x": "https://x.com/najoomitech",

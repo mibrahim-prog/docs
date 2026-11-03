@@ -2,3 +2,18 @@ header img {
   width: 180px !important;
   height: auto !important;
 }
+
+/* Hide Mintlify's header assistant button. */
+[aria-label*="assistant" i],
+[title*="assistant" i] {
+  display: none !important;
+}
+
+/* Hide the assistant's question composer. */
+form:has(input[placeholder*="Ask a question" i]),
+form:has(textarea[placeholder*="Ask a question" i]),
+input[placeholder*="Ask a question" i],
+textarea[placeholder*="Ask a question" i] {
+  display: none !important;
+}
+
