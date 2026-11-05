@@ -1,67 +1,103 @@
 ---
-title: "Upload Call"
-description: "Manually upload call recordings to Xperia for instant AI-driven QA scoring."
+title: "Upload Calls"
+description: "Upload call recordings manually and receive an AI-scored QA report within minutes."
+icon: "upload"
 ---
 
-# Upload Call
+Use **Call Upload** to send one or more recordings to Xperia for scoring. To have calls arrive automatically from your phone system instead, set up the [Integrator](/Pages/integrations).
 
-The **Upload Call** page allows you to manually submit audio recordings to Xperia. Once uploaded, Xperia immediately processes the audio and generates an AI-scored QA report.
+**To open it:** in the sidebar, under **Operations**, click **Call Upload**.
 
-<Note>
-If you want Xperia to automatically fetch calls from your system, click **Set up Integrator** at the top of the page.
-</Note>
+<Frame caption="Upload Call page">
+  <img
+    src="/images/guide-call-upload.jpg"
+    alt="Upload Call page with numbered callouts"
+  />
+</Frame>
 
-## Step-by-Step Guide
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Call Details** | Information about the call: agent, department, call type, recording time, who hung up, and call direction. |
+| 2 | **Stereo banner** | Shows your stereo setting (for example _Stereo on — agent on the left channel_). Click **Change** to edit it in [Audio Configuration](/Pages/audioConfig). |
+| 3 | **Browse Local Disk** | Selects one or more recordings from your computer. |
+| 4 | **Submit** | Sends the recordings for scoring. |
+| 5 | **Balance** | Your remaining account balance. Scoring is charged against it. |
+
+## Supported files
+
+<CardGroup cols={3}>
+  <Card title="Formats" icon="file-audio">
+    MP3 or WAV
+  </Card>
+
+  <Card title="Size" icon="weight-scale">
+    Under 50 MB per file
+  </Card>
+
+  <Card title="Batch" icon="layer-group">
+    Multiple files per upload
+  </Card>
+</CardGroup>
+
+## Upload a call
 
 <Steps>
-  <Step title="Enter Call Details">
-    In the **Call Details** panel, select the **Agent Name** and **Department Name** from the dropdown menus. 
-
-    <Frame>
-      <img src="/Images/UploadCall/CU-CallDetails.png" alt="Selecting Agent Name and Department Name" />
-    </Frame>
-
-    Fill in the remaining required fields, such as Call Type, Recording Time, and Call Direction.
+  <Step title="Select the agent">
+    In **Select Agent Name**, choose the agent who handled the call. Results appear under this name on the Dashboard and in Agent Reports.
   </Step>
-
-  <Step title="Upload the Audio File">
-    In the **Upload Recordings** panel, click **Browse Local Disk** to select your audio file, or drag and drop it into the designated area.
-
-    <Frame>
-      <img src="/Images/UploadCall/CU-UploadRecordings.png" alt="Clicking Browse Local Disk to upload a file" />
-    </Frame>
-
-    <Warning>
-    Files must be in **MP3** or **WAV** format and cannot exceed **50 MB** each.
-    </Warning>
+  <Step title="Select the department">
+    In **Select Department Name**, choose the department. Its parameter set and weightage are used to score the call.
   </Step>
-
-  <Step title="Submit the Call">
-    Click the yellow **Submit** button. A toast notification will appear in the top-right corner confirming the file (e.g., `18000821.wav`) has been uploaded.
-    <Frame>
-      <img src="/Images/UploadCall/CU-SubmitButton.png" alt="Clicking the Submit button" />
-    </Frame>
+  <Step title="Choose the call type">
+    Select **Human Agent** for a call handled by a person or **AI Call** for a call handled by an AI voice agent.
   </Step>
-
-  <Step title="Review the Upload Successful Modal">
-    Once the upload is complete, an **Upload Successful** modal appears.
-
-    <Frame>
-      <img src="/Images/UploadCall/CU-UploadSuccessful.png" alt="The Upload Successful confirmation modal" />
-    </Frame>
-
-    This modal confirms the following:
-    - **Status:** The number of calls uploaded successfully (e.g., *1 of 1 call uploaded successfully*).
-    - **Processing:** Xperia is now scoring the call.
-    - **Automation:** A prompt asking if you want to upload calls automatically next time, with a link to the **Integrator page**.
-
-    Choose one of the following actions:
-    - Click **Close** to dismiss the modal and remain on the Upload Call page.
-    - Click **Go to Scoring** to navigate directly to the QA report generation page.
+  <Step title="Enter the recording time">
+    Pick the date and time the call actually took place.
+  </Step>
+  <Step title="Set Hangup By and Call Direction">
+    | Field | Options |
+    | --- | --- |
+    | **Hangup By** | Default, Agent, Customer |
+    | **Call Direction** | Default, Inbound, Outbound |
+  </Step>
+  <Step title="Confirm the stereo setting">
+    Check the stereo banner (callout 2). If agent and customer are on the wrong channels, click **Change**.
+  </Step>
+  <Step title="Add the recordings">
+    Click **Browse Local Disk** and select one or more MP3/WAV files.
+  </Step>
+  <Step title="Submit">
+    Click **Submit**. Scored calls appear in [Call Scoring](/Pages/callScoring) with the status **New**.
   </Step>
 </Steps>
 
-## Related Topics
+<Tip>
+  Always set the agent and department. Calls without them are still scored, but show "--" for the agent and are harder to filter and report on.
+</Tip>
 
-- [Call Scoring](/call-scoring) — Understand how Xperia evaluates and scores your uploaded calls.
-- [Integrator](/integrator) — Automate call fetching and skip manual uploads.
+## Best practices for accurate scores
+
+- **Upload the original recording.** Re-encoded or heavily compressed audio reduces transcription accuracy.
+- **Use stereo when available.** Scoring each speaker on their own channel is the most accurate option.
+- **Pick the correct department.** Different departments can have different parameters and weightage.
+- **Enter the real recording time.** Reports and trends are based on it.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The file won't upload">
+    Make sure it is an MP3 or WAV file under 50 MB. Convert other formats (M4A, OGG, AAC) first.
+  </Accordion>
+
+  <Accordion title="The call shows 'Error while processing!'">
+    The recording could not be scored — usually because the audio is corrupt or silent. Re-upload the original file. If the error repeats, contact support with the file name.
+  </Accordion>
+
+  <Accordion title="The agent's score looks wrong">
+    Check the stereo channel. If the agent and customer channels are swapped, the agent is scored on the customer's words.
+  </Accordion>
+
+  <Accordion title="Submit doesn't work">
+    Check your balance (callout 5). If it is low, top up on the [Billing](/Pages/billing) page.
+  </Accordion>
+</AccordionGroup>

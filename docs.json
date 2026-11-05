@@ -14,14 +14,47 @@
         "group": "Getting Started",
         "pages": [
           "Pages/introduction",
+          "Pages/signIn",
+          "Pages/gettingStarted"
+        ]
+      },
+      {
+        "group": "Analytics",
+        "pages": [
           "Pages/dashboard",
-          "Pages/specializaParameters",
-          "Pages/audioConfig",
-          "Pages/Fatal_Alerts",
-          "Pages/customParameters",
+          "Pages/aiAssistant"
+        ]
+      },
+      {
+        "group": "Call Operations",
+        "pages": [
           "Pages/callUpload",
           "Pages/callScoring",
           "Pages/agentReports"
+        ]
+      },
+      {
+        "group": "Scoring Setup",
+        "pages": [
+          "Pages/customParameters",
+          "Pages/specializaParameters"
+        ]
+      },
+      {
+        "group": "Configuration",
+        "pages": [
+          "Pages/integrations",
+          "Pages/Fatal_Alerts",
+          "Pages/audioConfig",
+          "Pages/workspaceSettings",
+          "Pages/usersAndRoles",
+          "Pages/billing"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "Pages/faq"
         ]
       }
     ],

@@ -1,82 +1,67 @@
 ---
-
 title: "Audio Configuration"
-
-description: "Configure how Xperia identifies the agent and customer audio channels."
-
+description: "Turn on stereo accuracy so the agent and the customer are scored on their own audio channels."
+icon: "volume-high"
 ---
 
-# Audio Configuration
+Many call systems record in **stereo** — the agent on one channel and the customer on the other. When Xperia knows which channel belongs to the agent, it scores each speaker separately, so the agent's score is never affected by something the customer said.
 
-## What is Audio Configuration?
+**To open it:** in the sidebar, under **Configuration**, click **Audio Config**.
 
-Audio Configuration helps Xperia correctly distinguish between the **agent's voice** and the **customer's voice** in a call recording.
+<Frame caption="Scoring accuracy page">
+  <img
+    src="/images/guide-audio-config.jpg"
+    alt="Audio Config page with numbered callouts"
+  />
+</Frame>
 
-In dual-channel (stereo) recordings, the agent and customer voices are recorded on separate audio channels. Depending on how the recording was created, the agent's voice may be on either the **Left channel** or the **Right channel**.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Stereo accuracy toggle** | Turns per-channel scoring on or off. |
+| 2 | **Which channel is the agent on?** | Choose **Left** or **Right**. Click **Play a sample** to compare. |
 
-This feature allows you to tell Xperia which channel contains the **agent's voice**, so Xperia can correctly identify the agent and customer voices when processing new calls.
-
-## How to Configure Audio
+## Turn on stereo accuracy
 
 <Steps>
 
-  <Step title="Open Audio Config">
+  <Step title="Confirm your recordings are stereo">
 
-    Open the **Audio Config** page from the menu.
-
-    ![Audio Config page](/Images/Click_AudioConfig.png)
+    Ask your telephony provider, or open a recording in any audio editor — stereo files show two separate waveforms.
 
   </Step>
 
-  <Step title="Click Edit Setting">
+  <Step title="Turn on Stereo accuracy">
 
-    Click the **Edit Setting** button to modify the audio configuration.
-
-    ![Edit Setting button](/Images/Click_EditButton.png)
+    Switch the toggle on (callout 1).
 
   </Step>
 
-  <Step title="Turn On the Toggle">
+  <Step title="Select the agent's channel">
 
-    Turn on the **Dual-channel (stereo) recordings** toggle to enable separate audio channels for the agent and customer.
-
-    ![Dual-channel toggle](/Images/Click_toggle.png)
-
-  </Step>
-
-  <Step title="Choose the Agent Channel">
-
-    Select the **Left** or **Right channel** based on which channel contains the **agent's voice** in the recording.
-
-    ![Choose agent channel](/Images/Select_LCRC.png)
-
-  </Step>
-
-  <Step title="Save Your Changes">
-
-    Click **Save Changes** to save the audio configuration.
-
-    ![Save Changes button](/Images/Click_SaveButton.png)
+    Choose **Left** or **Right** (callout 2).
 
   </Step>
 
 </Steps>
 
-## How It Works
+Your setting is shown on the [Upload Calls](/Pages/callUpload) page (for example _Stereo on — agent on the left channel_), with a **Change** link back to this page.
 
-Once the audio configuration is saved, Xperia uses the selected channel to identify the **agent's voice** when processing new call recordings.
+## Good to know
 
-- The channel you select is treated as the **agent's voice**.
-- The other channel is automatically treated as the **customer's voice**.
+<CardGroup cols={2}>
+  <Card title="Paid feature" icon="dollar-sign">
+    Scoring each channel separately takes extra processing, so stereo calls cost more. Click **View pricing** on the page for current rates.
+  </Card>
 
-For example:
+  <Card title="Applies going forward" icon="clock-rotate-left">
+    The setting applies to calls uploaded or imported from now on. Existing scores are unchanged.
+  </Card>
+</CardGroup>
 
-**Agent → Left channel**  
-**Customer → Right channel**
+<Warning>
+  If the wrong channel is selected, the agent will be scored on the customer's words. If scores look unusual after enabling stereo, check the channel first.
+</Warning>
 
-or
-
-**Agent → Right channel**  
-**Customer → Left channel**
-
-> **Note:** These settings apply to **newly uploaded calls**. They do not change the audio configuration or scores of existing calls.
+<Note>
+  Mono recordings (a single channel) don't need this setting — leave it off.
+</Note>

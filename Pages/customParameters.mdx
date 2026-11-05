@@ -1,161 +1,155 @@
 ---
-title: "Custom Parameters"
-description: "Create custom parameters in Xperia to evaluate specific agent behaviors during call analysis."
+title: "Scoring Parameters"
+description: "Control how calls are scored: distribute category weightage and create custom parameters in plain language."
+icon: "sliders"
 ---
 
-import { useState } from 'react';
+The **Parameter** page defines what Xperia checks on every call and how many points each check is worth.
 
-export function ArrowCarousel() {
-  const [current, setCurrent] = useState(0);
+**To open it:** in the sidebar, under **Configuration**, click **Parameter**.
 
-  const steps = [
-    {
-      title: "Step 1: Open the Parameter page",
-      text: "When you log in to the Xperia Dashboard, click on Parameter. The Parameter page opens with the Categories Weightage tab selected by default.",
-      img: "/Images/CustomParameters/CP-ClickParameter.png"
-    },
-    {
-      title: "Step 2: Select the Custom Parameter tab",
-      text: "The Parameter page contains three tabs: Categories Weightage, Custom Parameter, and Specialized Parameter. Select Custom Parameter.",
-      img: "/Images/CustomParameters/CP-CustomParameterTab.png"
-    },
-    {
-      title: "Step 3: Add a new parameter",
-      text: "Select Add Parameter to open the parameter creation dialog.",
-      img: "/Images/CustomParameters/CP-AddParameterBtn.png"
-    },
-    {
-      title: "Step 4: Select department(s) (optional)",
-      text: "In the Select Department(s) section, choose the department the parameter should apply to. Department assignment is optional.",
-      img: "/Images/CustomParameters/CP-SelectDepartment.png"
-    },
-    {
-      title: "Step 5: Enter the parameter name",
-      text: "In the Parameter Name field, enter a clear, descriptive name for the behavior to be evaluated, such as Greeting or Politeness.",
-      img: "/Images/CustomParameters/CP-Enterparametername.png"
-    },
-    {
-      title: "Step 6: Define the false condition",
-      text: "In the Mark this as False if... field, describe the situation in which the behavior should be considered negative.",
-      img: "/Images/CustomParameters/CP-EnterFalseCondition.png"
-    },
-    {
-      title: "Step 7: Configure call tracking (optional)",
-      text: "If the Track every call radio button is displayed, select or clear it according to your evaluation requirements.",
-      img: "/Images/CustomParameters/CP-TrackCall.png"
-    },
-    {
-      title: "Step 8: Generate the prompt",
-      text: "Select Generate Prompt. Xperia generates an evaluation prompt from the details you entered. Review the prompt to ensure it is accurate.",
-      img: "/Images/CustomParameters/CP-ClickNext.png"
-    },
-    {
-      title: "Step 9: Create the parameter",
-      text: "When the generated prompt is correct, select Create Parameter.",
-      img: "/Images/CustomParameters/CP-ClickCreateParameter.png"
-    },
-    {
-      title: "Step 10: Assign Categories Weightage",
-      text: "If you selected departments earlier, assign a score to your new parameter. Warning: The total weightage must equal 100/100.",
-      img: "/Images/CustomParameters/CP-ClickSave&Next.png"
-    },
-    {
-      title: "Step 11: Confirm the parameter was created",
-      text: "Xperia displays Parameter Created Successfully! Choose to Upload a Call to proceed, or Cancel to upload calls later.",
-      img: "/Images/CustomParameters/CP-ClickUploadCall.png"
-    }
-  ];
+The page has three tabs:
 
-  return (
-    <div className="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 my-8 bg-white dark:bg-zinc-900 shadow-sm">
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="m-0 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-          {steps[current].title}
-        </h3>
-        <span className="text-xs font-semibold bg-zinc-700 text-white px-3 py-1 rounded-full">
-          {current + 1} / {steps.length}
-        </span>
-      </div>
-      
-      <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400 min-h-[48px]">
-        {steps[current].text}
-      </p>
-      
-      <div className="flex items-center justify-between gap-4">
-        <button 
-          onClick={() => setCurrent(current - 1)} 
-          disabled={current === 0}
-          className="w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 flex items-center justify-center text-xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          aria-label="Previous Step"
-        >
-          &#8592;
-        </button>
+<CardGroup cols={3}>
+  <Card title="Categories Weightage" icon="scale-balanced" href="#categories-weightage">
+    Distribute 100 points across categories and parameters.
+  </Card>
 
-        <div className="flex-1 flex justify-center border border-zinc-200 dark:border-zinc-800 rounded-lg p-2 bg-black">
-          <img 
-            src={steps[current].img} 
-            alt={steps[current].title}
-            className="max-w-full max-h-[400px] object-contain rounded" 
-          />
-        </div>
+  <Card title="Custom Parameter" icon="pen-to-square" href="#custom-parameters">
+    Create your own checks in plain language.
+  </Card>
 
-        <button 
-          onClick={() => setCurrent(current + 1)} 
-          disabled={current === steps.length - 1}
-          className="w-12 h-12 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 flex items-center justify-center text-xl disabled:opacity-30 disabled:cursor-not-allowed hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          aria-label="Next Step"
-        >
-          &#8594;
-        </button>
-      </div>
-    </div>
-  );
-}
+  <Card title="Specialized Parameter" icon="shield-halved" href="/Pages/specializaParameters">
+    Fatal incidents and trackers.
+  </Card>
+</CardGroup>
 
-# Custom Parameters
+<Warning>
+  Every **Call Type** (Human or AI) and **Department** combination has its own setup. Always check both selectors before making changes.
+</Warning>
 
-## Overview
+## Categories Weightage
 
-Custom Parameters allow Xperia to evaluate specific behaviors, actions, or criteria during a customer conversation. Each parameter defines a single behavior to assess and the conditions under which that behavior should be marked as incorrect.
+<Frame caption="Categories Weightage tab">
+  <img
+    src="/images/guide-categories-weightage.jpg"
+    alt="Categories Weightage tab with numbered callouts"
+  />
+</Frame>
 
-For example, a **Greeting** parameter can verify whether an agent greets the customer appropriately at the beginning of a call. You define what constitutes an incorrect greeting, and Xperia deducts marks when that condition is detected during call analysis.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Parameter tabs** | Switch between Categories Weightage, Custom Parameter, and Specialized Parameter. |
+| 2 | **Call Type · Department** | Choose which scorecard you are editing. |
+| 3 | **Total Score · Edit All** | Running total (must be **100/100**) and the button to edit all points. |
+
+### Standard categories
+
+Xperia includes ten categories: **Call Opening**, **Closing**, **Communication**, **Hold Procedure**, **Listening**, **Personalisation**, **Probing**, **Responsibility**, **Tone**, and **Upselling**. Your custom parameters are grouped in their own **Custom Parameter** category.
+
+Each category contains parameters. For example, **Call Opening** contains _Self Introduction_, _Delayed Opening_, and _Assistance Offered_. Click **Category Parameters ▼** to expand a category, and hover the **ⓘ** icon to read a parameter's description.
+
+### Change the weightage
+
+<Steps>
+  <Step title="Choose the scorecard">
+    Select the **Call Type** and **Department** (callout 2).
+  </Step>
+  <Step title="Click Edit All">
+    Point fields become editable.
+  </Step>
+  <Step title="Assign points">
+    Enter points for each category and its parameters. Set a category to **0** to exclude it from scoring.
+  </Step>
+  <Step title="Balance to 100">
+    Adjust until **Total Score** reads **100/100**.
+  </Step>
+  <Step title="Save">
+    Save your changes. The new weightage applies to calls scored from now on.
+  </Step>
+</Steps>
 
 <Note>
-Custom parameters are scored individually and contribute to the **Categories Weightage** of the department they are assigned to. The total weightage for a department must equal **100/100**.
+  Changing weightage does not re-score calls that were already processed.
 </Note>
 
-## Before You Begin
+## Custom parameters
 
-- You are signed in to Xperia.
-- You have identified the behavior you want to evaluate and the condition that should mark it as false.
-- You have decided whether the parameter applies to a specific department. Department assignment is optional.
+Custom parameters let you score behaviors specific to your business — a mandatory greeting, identity verification, a disclosure, upselling — without writing rules by hand. You describe the behavior, and Xperia's AI writes the full evaluation rule.
 
-## Create a Custom Parameter
+<Frame caption="Custom Parameter tab">
+  <img
+    src="/images/guide-custom-parameters.jpg"
+    alt="Custom Parameter tab with numbered callouts"
+  />
+</Frame>
 
-<ArrowCarousel />
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Add Parameter** | Opens the wizard to create a new parameter. |
+| 2 | **Data Type · Parameter Cost** | **Boolean** (true/false) or **float** (a score from zero to full marks), and the extra cost per call minute. |
+| 3 | **Actions** | Delete (bin) or edit (pencil) the parameter. |
 
-## Example: Creating a Greeting Parameter
+The **Departments** column shows where each parameter is scored (_Unassigned_ means the Default set), and **Description** shows the full rule — click the arrow to expand it.
 
-To evaluate whether an agent greets the customer appropriately at the start of a call, use the following configuration:
+### Create a custom parameter
 
-| Field | Value |
-|---|---|
-| **Parameter Name** | Greeting |
-| **Mark this as False if…** | The agent does not greet the customer appropriately at the very beginning of the call. |
-| **Department(s)** | Optional — select a department or skip this step. |
-| **Track every call** | Optional — select or clear according to your requirements. |
+The **Add Custom Parameter** wizard has four steps: **Create → Review → Weightage → Upload**.
 
-### Finalizing the Parameter
-After entering the configuration above, complete the creation process:
+<Frame caption="Add Custom Parameter — Create step">
+  <img
+    src="/images/guide-add-custom-parameter.jpg"
+    alt="Add Custom Parameter create step with numbered callouts"
+  />
+</Frame>
 
-1. Select **Generate Prompt** and review the generated text for accuracy.
-2. Select **Create Parameter** to save it.
-3. If you assigned the parameter to a department, enter its score in the **Categories Weightage** modal. 
-   <Warning>
-   The total weightage for the department must equal exactly **100/100** to proceed.
-   </Warning>
-4. Once created, you can immediately **Upload a Call** for evaluation, or close the dialog and upload calls later.
-## Related Topics
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Progress** | The four wizard steps. |
+| 2 | **Departments** | Where the parameter will be scored. Use **Select all**, or leave all unselected to add it to the Default set. |
+| 3 | **Parameter Name** | A short, clear name such as _Politeness_, _Greeting_, or _Issue Resolution_. |
+| 4 | **Mark this as false if…** | The negative behavior that should lose points, for example _the agent does not acknowledge the customer's frustration_. |
 
-- [Specialized Parameters](/specializaParameters) — Explore predefined parameters for common evaluation criteria.
-- [Dashboard](/dashboard) — Learn more about the Xperia dashboard and its features.
+Below these fields is **Track this in every call** (on by default). Keep it on only for behaviors that belong in **every** call, such as greeting the customer or reading a compliance statement. With it on, a call that didn't need the behavior can still lose points — for example, with _Empathy_ on, a customer who only asks for an order status is still checked for empathy.
+
+Click **Next** to continue.
+
+<Frame caption="Add Custom Parameter — Review step">
+  <img
+    src="/images/guide-add-custom-parameter-review.jpg"
+    alt="Add Custom Parameter review step with numbered callouts"
+  />
+</Frame>
+
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Evaluation cost** | The extra charge per call minute for this parameter (for example _+\$0.000372_). |
+| 2 | **Summary tags** | Whether it is scored, its departments, and whether it is tracked in every call. The AI-generated **Description** appears below. |
+| 3 | **Create Parameter** | Saves the parameter and moves on. Click **Back** to change anything first. |
+
+Then complete the **Weightage** step — give the new parameter its points while keeping the total at 100 — and finish the wizard.
+
+### Tips for writing good parameters
+
+<AccordionGroup>
+  <Accordion title="One behavior per parameter">
+    "Agent verified the customer's identity" is easy to score. "Agent was polite, verified identity, and offered help" mixes three checks — split it into three parameters.
+  </Accordion>
+
+  <Accordion title="Describe the failure">
+    The field is **Mark this as false if…**, so write the negative case: _the agent ends the call without asking if anything else is needed._
+  </Accordion>
+
+  <Accordion title="Quote exact wording">
+    If agents must say specific words (a greeting, company name, or disclosure), include them in the description.
+  </Accordion>
+
+  <Accordion title="Control the cost">
+    Every parameter adds a small per-minute cost. Assign parameters only to the departments that need them, and delete ones you no longer use.
+  </Accordion>
+</AccordionGroup>
+
+### Edit or delete a parameter
+
+- Click the **pencil** to edit the name, rule, or departments.
+- Click the **bin** to delete it. Deleted parameters are no longer evaluated; past scores are kept.

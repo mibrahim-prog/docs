@@ -1,125 +1,112 @@
 ---
 title: "Dashboard"
-description: "Learn how to monitor call-center performance, review custom parameter results, and investigate specialized parameter matches in Xperia."
+description: "Monitor call volume, average scores, agent performance, and parameter results across your contact center."
+icon: "chart-line"
 ---
 
-{/* # Dashboard */}
+The **Dashboard** is your central view of QA performance. It summarizes every scored call that matches your filters and is organized into three tabs: **Analytics**, **Custom Parameters**, and **Specialized Parameters**.
 
-## Overview
+**To open it:** click **Dashboard** in the sidebar.
 
-The Xperia Dashboard provides a central view of call activity, scoring results, agent performance, and important events.
+## Analytics tab
 
-It contains three main tabs:
+<Frame caption="Dashboard — Analytics tab">
+  <img
+    src="/images/guide-dashboard-analytics.jpg"
+    alt="Dashboard Analytics tab with numbered callouts"
+  />
+</Frame>
 
-- **Analytics:** Review call metrics, scoring trends, and agent performance.
-- **Custom Parameters:** Review parameter results and pass rates.
-- **Specialized Parameters:** Monitor important events and investigate matching calls.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Dashboard tabs** | Switch between **Analytics**, **Custom Parameters**, and **Specialized Parameters**. |
+| 2 | **Filters** | Narrow every chart by **Call Type**, **Department**, **Agent**, and **Time Range**. |
+| 3 | **Summary cards** | Headline numbers for the selected period (see below). |
 
-## Dashboard Filters
+### Filters
 
-Use the filters to narrow the displayed results.
+| Filter | Options |
+| --- | --- |
+| **Call Type** | Human, AI Calls |
+| **Department** | All Departments, or one department |
+| **Agent** | All Agents, or one agent |
+| **Time Range** | Today, Yesterday, Last 7 Days, Last 30 Days, Last 90 Days, Last 6 Months, Last Year, Custom Range |
 
-- **Call Type:** Filter calls by type.
-- **Department:** Select a department or all departments.
-- **Agent:** Select an individual agent or all agents.
-- **Time Range:** Choose the reporting period.
+<Tip>
+  Select **Custom Range** to choose exact start and end dates — ideal for weekly QA meetings and month-end reviews.
+</Tip>
 
-## Analytics
+### Summary cards
 
-The Analytics tab provides an overview of call-center performance for the selected filters.
+| Card | Meaning |
+| --- | --- |
+| **Total Calls** | Number of calls scored in the selected period. |
+| **Average Score** | Average call score out of 100. |
+| **Dead Calls** | Calls classified as dead — no meaningful conversation took place. |
+| **Fatal Incidents** | Calls that triggered a fatal incident condition and were scored zero. |
 
-![Xperia Analytics Dashboard](/Images/Dashboard/DB-Analytics.png)
+### Charts
 
-### Performance Summary Cards
+| Chart | What it shows | How to use it |
+| --- | --- | --- |
+| **Score Trend** | Average score over time. | Spot sustained drops after process, script, or staffing changes. |
+| **Agent Analytics** | Average score per agent. Use **Show** to set agents per page and the arrows to page through. | Identify top performers and agents who need coaching. |
+| **Score Distribution** | Number of calls in each score band (45–50 … 95–100). | A long tail on the left shows where quality is slipping. |
+| **Category Scoring Overview** | The 10 standard categories on a 0–5 scale. Pick a category with the **Category** selector. | See which skill areas are strongest and weakest. |
+| **Category Parameters** | **Average Obtained Score** vs. **Average Out Of Score** for each parameter in the selected category. | Find the exact behavior that costs the most points. |
 
-The dashboard displays four key metrics:
+<Note>
+  **Reading Category Parameters:** an obtained score of 3.52 against an out-of score of 4.2 means calls earned, on average, 3.52 of 4.2 possible points for that parameter — about 84%.
+</Note>
 
-- **Total Calls:** The total number of calls in the selected period.
-- **Average Score:** The average score of the calls.
-- **Dead Calls:** The number of calls classified as dead.
-- **Fatal Incidents:** The number of calls associated with fatal incidents.
+## Custom Parameters tab
 
-### Score Trend
+<Frame caption="Dashboard — Custom Parameters tab">
+  <img
+    src="/images/guide-dashboard-custom-parameters.jpg"
+    alt="Dashboard Custom Parameters tab with numbered callouts"
+  />
+</Frame>
 
-![Score Trend](/Images/Dashboard/DB-ScoreTrend.png)
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Custom Parameters tab** | Results for the custom parameters you created. |
+| 2 | **Legend** | **Detected** (green) = calls where the parameter was marked _True_; **Total** (white) = calls it was checked on. |
 
-Shows how call scores change over time. Use the trend to identify increases or decreases in performance.
+Below the **Detected count** chart, **Parameters Score** compares the average score per call with the maximum possible score (**Out of**) for each scored parameter. Use the pagination under each chart to see all parameters, and **Add Parameter** to create a new one.
 
-### Agent Analytics
+## Specialized Parameters tab
 
-![Agent Analytics](/Images/Dashboard/DB-AgentAnalytics.png)
+<Frame caption="Dashboard — Specialized Parameters tab">
+  <img
+    src="/images/guide-dashboard-specialized-parameters.jpg"
+    alt="Dashboard Specialized Parameters tab with numbered callouts"
+  />
+</Frame>
 
-Compares displayed scores across agents. Use the Show selector and pagination to view more agents.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Specialized Parameters tab** | Results for your trackers. |
+| 2 | **Legend** | **Green** = flagged as a positive signal, **Red** = flagged as a warning sign, **White** = total calls checked. |
 
-### Score Distribution
+**To investigate a tracker:** click its bar or select **View calls** under its name. Xperia opens [Call Scoring](/Pages/callScoring) filtered to the flagged calls.
 
-![Score Distribution](/Images/Dashboard/DB-ScoreDis.png)
+## Recommended weekly review
 
-Shows how calls are distributed across score ranges. Taller bars mean more calls fall within that range.
-
-### Category Scoring Overview
-
-Shows the scores for performance categories on a **0–5 scale**. Use the category selector to choose a category and review its results.
-
-### Category Parameters
-
-![Category Parameters](/Images/Dashboard/DB-Category.png)
-
-Compares the average score calls received with the average maximum score available for each parameter.
-
-- **Average Obtained Score:** The average points calls actually received for a parameter.
-- **Average Out Of Score:** The average maximum points available for that parameter.
-
-**Example:** If the obtained score is **3.52** and the out-of score is **4.2**, calls received an average of 3.52 out of 4.2 possible points.
-
-## Custom Parameters
-
-![Custom Parameters](/Images/Dashboard/DB-Custom.png)
-
-The Custom Parameters tab displays configured parameters and their results for the selected filters.
-
-### Custom Parameter Information
-
-- **Parameter Name:** The name of the configured parameter.
-- **Total Values:** The number of recorded parameter values.
-- **Pass Rate:** The percentage of results that satisfy the parameter.
-- **True Results:** The number of results evaluated as true.
-- **Total Results:** The total number of recorded results.
-
-Each card compares true results with total values to help you understand how often a parameter is satisfied.
-
-## Specialized Parameters
-
-![Specialized Parameters](/Images/Dashboard/DB-Specialize.png)
-
-The Specialized Parameters tab displays configured events, risks, behaviors, and signals identified during call analysis.
-
-### Specialized Parameter Information
-
-- **Parameter Name:** The event or behavior being monitored.
-- **Flagged Percentage:** The displayed percentage of calls flagged for the parameter.
-- **Call Count:** The number of matching calls compared with the total calls shown.
-- **Progress Bar:** A visual representation of the flagged percentage.
-- **Signal Indicator:** Shows whether the parameter represents a warning or a positive signal.
-
-### View Calls
-
-1. Open the **Specialized Parameters** tab.
-2. Find the parameter and select **View Calls**.
-3. Review the matching calls on the Call Scoring page.
-
-The displayed calls depend on the selected parameter, available call data, and applicable filters.
-
-### Add a Specialized Parameter
-
-Select **Add Parameter** to begin configuring a new specialized parameter. Available options depend on your Xperia setup and permissions.
-
-## How to Use the Dashboard
-
-1. Select the required filters.
-2. Review the performance summary and scoring charts.
-3. Compare agent and category results.
-4. Review custom parameter pass rates.
-5. Investigate specialized parameters and open matching calls.
-
-Use the charts to identify areas for further review, then examine the relevant calls and scores before drawing conclusions.
+<Steps>
+  <Step title="Set the scope">
+    Choose the call type, department, and time range.
+  </Step>
+  <Step title="Check the headline numbers">
+    Compare Average Score, Dead Calls, and Fatal Incidents with the previous period.
+  </Step>
+  <Step title="Find outliers">
+    Use Agent Analytics and Score Distribution to find low-scoring agents and calls.
+  </Step>
+  <Step title="Find the cause">
+    Use Category Parameters and the Custom Parameters tab to see which behaviors lose the most points.
+  </Step>
+  <Step title="Listen to real calls">
+    Open the calls behind the numbers before you coach.
+  </Step>
+</Steps>

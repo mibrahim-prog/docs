@@ -1,133 +1,182 @@
 ---
-title: "Call Scoring"
-description: "Review AI-scored calls, manage appeals, filter reports, and download call data."
+title: "Call Scoring & Call Reports"
+description: "Find scored calls, open their QA reports, correct scores, handle appeals, and export reports in bulk."
+icon: "list-check"
 ---
 
-# Call Scoring
+**Call Scoring** lists every call Xperia has processed. From here you can search and filter calls, open a call's full QA report, review or correct its score, respond to appeals, and download or email reports in bulk.
 
-The **Call Scoring** page acts as your central hub for reviewing agent performance. Once a call is uploaded and processed by Xperia, it appears here with an AI-generated QA score, detailed insights, and category breakdowns.
+**To open it:** in the sidebar, under **Operations**, click **Call Scoring**.
 
-## Call Scoring Dashboard
+## The Call Scoring page
 
-The main dashboard displays a paginated table of all processed calls. At the top, you can quickly view call volumes categorized by their current workflow status:
+<Frame caption="Call Scoring page">
+  <img
+    src="/images/guide-call-scoring.jpg"
+    alt="Call Scoring page with numbered callouts"
+  />
+</Frame>
 
-- **Total:** All calls in the system.
-- **New:** Calls that have just been scored and have not been opened yet.
-- **Viewed:** Calls that have been opened but not acted upon.
-- **Reviewed:** Calls that have been marked as reviewed by a manager.
-- **Updated:** Calls where scores have been manually adjusted.
-- **Appealed for Review:** Calls where the agent has disputed the AI score.
-- **Appeal Resolved:** Appeals that have been finalized.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Filters · Bulk Download · Refresh** | Filter the list, export reports in bulk, or reload newly scored calls. |
+| 2 | **Status counters** | How many calls are in each review state. |
+| 3 | **Call list** | One row per call. Click a row to open its report. |
 
-### Table Columns
+### Status counters
+
+| Status | Meaning |
+| --- | --- |
+| **Total** | All calls in the current view. |
+| **New** | Scored, but the report has not been opened yet. |
+| **Viewed** | The report has been opened. |
+| **Reviewed** | A reviewer clicked **Mark as Reviewed**. |
+| **Updated** | A reviewer edited the score or details after scoring. |
+| **Appealed for Review** | The agent has appealed the score. |
+| **Appeal Resolved** | An admin has responded to the appeal. |
+
+### Call list columns
 
 | Column | Description |
-|---|---|
-| **File Name** | The original name of the uploaded audio file. |
-| **Agent Name** | The agent associated with the call. |
-| **Recording Time & Date** | When the call originally took place. |
-| **Completion Time & Date** | When Xperia finished AI processing the call. |
+| --- | --- |
+| **File Name** | Name of the recording (masked if [Hide File Name Display](/Pages/workspaceSettings#security) is on). |
+| **Agent Name** | Agent assigned to the call, or "--" if none. |
+| **Recording Time & Date** | When the call took place. |
+| **Completion Time & Date** | When Xperia finished scoring it. |
 | **Duration(s)** | Length of the call. |
-| **Obtained Score** | The score the agent achieved. Scores flagged as **Fatal Incident** appear in red text, indicating critical compliance failures. |
-| **Total** | The maximum possible score for the call based on the active parameters. |
-| **Status** | The current review state of the call (e.g., New, Updated, Viewed). |
+| **Obtained Score** | Points earned. Shows **Fatal Incident** in red when a fatal condition was detected. |
+| **Total** | Maximum points available. |
+| **Status** | Review status, or **Error while processing!** if scoring failed. |
 
-<Note>
-To download multiple reports at once, click the **Bulk Download** button at the top of the table.
-</Note>
+## Filter and search calls
 
-## Filtering and Downloading Calls
+Click **Filters** to open the **Filter By** panel. Choose your options, then click **Apply Filters**. **Clear All** resets the panel.
 
-To locate specific calls, click the **Filters** button. A modal will appear allowing you to narrow down the results:
-
-<Frame>
-  <img src="/Images/CallScoring/CS-FilterModal.png" alt="Call Scoring Filter Modal" />
+<Frame caption="Filter By panel">
+  <img
+    src="/images/guide-call-scoring-filters.jpg"
+    alt="Call Scoring filter panel with numbered callouts"
+  />
 </Frame>
 
-- **Search By:** Toggle between searching by File Name or Agent Name.
-- **Call Type:** Filter between Human and AI Calls.
-- **Status:** Select specific statuses (e.g., select **Updated** to view only calls that have been manually edited).
-- **Sort By & Order:** Organize the list by Completion Time, Score, etc., in Ascending or Descending order.
-- **Date Filter:** Filter calls by Recording Time (None, Single Date, or a Date Range).
-- **Call Flag:** Filter by specific flags, such as Fatal Incidents.
-- **Specialized Parameter:** Filter calls that failed or passed specific parameters.
-- **Appeals:** Toggle to view only calls that have been appealed or resolved.
+| # | Option | Choices |
+| :-: | --- | --- |
+| 1 | **Search By** | File Name or Agent Name |
+| 2 | **Call Type** | Human or AI Calls |
+| 3 | **Status** | All Statuses, or a single status |
+| 4 | **Apply Filters / Clear All** | Apply your choices, or reset them |
 
-Click **Apply Filters** to update the table.
+Scroll down in the panel for more options:
 
-### Managing Active Filters
-
-Once filters are applied, a green **Filters applied** banner will appear above the table.
-
-- **Filter by Agent Name:** Enter an agent's name to instantly isolate all calls associated with them.
-- **Filter by Status:** Select a status like "Updated" to only show calls that have been modified.
-- **Clear Filters:** To remove a specific filter, click the **X** on the filter pill. To remove all filters, click **Clear all**.
-
-### Downloading Filtered Data
-
-Instead of downloading your entire database, export only the calls that match your filters. Scroll through the screenshots below to see how to filter by status or agent name.
-
-<div style={{ display: "flex", gap: "16px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory" }}>
-  <div style={{ flex: "0 0 85%", scrollSnapAlign: "start" }}>
-    <Frame caption="Filter calls by Updated status">
-      <img src="/Images/CallScoring/CS-UpdatedDownload.png" alt="Call table filtered by Updated status" />
-    </Frame>
-  </div>
-  <div style={{ flex: "0 0 85%", scrollSnapAlign: "start" }}>
-    <Frame caption="Filter calls by agent name">
-      <img src="/Images/CallScoring/CS-AgentDownload.png" alt="Call table filtered by agent name" />
-    </Frame>
-  </div>
-</div>
-
-1. Once your filters are applied, locate the yellow **Download Filtered Data** button on the right side of the screen.
-2. Click the dropdown arrow next to the button.
-3. Select your preferred format:
-   - **CSV:** For spreadsheet analysis.
-   - **PDF:** For a formatted, shareable document.
-
-<Note>
-The export will only include the rows currently matching your active filters. For example, if you filter by an Agent Name and click download, the file will only contain that specific agent's calls.
-</Note>
-
-## Reviewing a Call (File Report)
-
-To see the detailed breakdown of a call, click on any row in the table. This opens the **File Report** page.
-
-<Frame>
-  <img src="/Images/CallScoring/CS-ReviewingCall.png" alt="Detailed File Report view" />
-</Frame>
-
-### 1. Header Actions
-
-At the top right, you have several actions:
-
-- **Download (Icon):** Export the report as a **PDF** or **CSV** file.
-- **Mark as Reviewed:** Change the status of the call to "Reviewed" to indicate the QA check is complete.
-- **Edit:** Manually adjust the AI-generated scores if necessary.
-
-### 2. Call Details & Audio
-
-The left panel contains the call metadata (File Name, Agent, Department, Work Code, Duration) and an embedded audio player so you can listen to the recording while reviewing the score.
-
-### 3. Scoring Breakdown
-
-The right panel displays the performance criteria (e.g., Call Opening, Closing, Communication, Hold, Listening). It shows the **Obtained Score** versus the **Out Of** maximum for each category. The **Total Score** is displayed at the bottom.
-
-### 4. AI Insights
-
-Below the metadata, Xperia provides three expandable sections based on the conversation:
-
-- **Summary:** A brief overview of the call's purpose and outcome.
-- **Reasoning:** A detailed explanation of why the agent received their specific scores, including areas of improvement.
-- **Suggestion:** Actionable coaching advice for the agent to improve future calls.
+| Option | Choices |
+| --- | --- |
+| **Sort By** and **Order** | For example Completion Time, Descending or Ascending |
+| **Date Filter** | Choose the date field (for example Recording Time), then **None**, **Single** date, or a **Range** |
+| **Call Flag** | None, Fatal Call, or Dead Call |
+| **Specialized Parameter** | Only calls flagged by a specific tracker |
+| **Appealed for Review** | Only calls an agent has appealed |
+| **Appeal Resolved** | Only appeals an admin has responded to |
 
 <Tip>
-If a crucial behavior was missed, click **Add parameter** at the bottom of the report to create a new custom evaluation metric for future calls.
+**Build a coaching list in seconds:** set **Call Flag → Fatal Call**, choose a date range, and sort by Completion Time.
 </Tip>
 
-## Related Topics
+## Read a call report
 
-- [Custom Parameters](/Pages/customParameters) — Create new evaluation criteria.
-- [Specialized Parameters](/Pages/specializaParameters) — Explore predefined evaluation criteria.
-- [Upload Call](/Pages/callUpload) — Upload new recordings for scoring.
+Click any call to open its **File Report**.
+
+<Frame caption="File Report — header, call details, and scoring">
+  <img
+    src="/images/guide-call-report.jpg"
+    alt="Call report with numbered callouts"
+  />
+</Frame>
+
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Report actions** | **Export** the report as PDF (yellow icon), **Mark as Reviewed**, or **Edit** the scores. |
+| 2 | **Flags** | Trackers the call matched, for example _Customer Dissatisfaction_. |
+| 3 | **Call Details** | File name (with copy button), agent, department, work code, recording time, duration, and call tag. |
+| 4 | **Scoring** | Obtained score and maximum score for each category. Click a category to expand its parameters. **Total Score** is shown at the bottom. |
+
+Scroll down for the audio and the AI insights:
+
+<Frame caption="File Report — audio and AI insights">
+  <img
+    src="/images/guide-call-report-insights.jpg"
+    alt="Call report audio, summary, reasoning and suggestion with numbered callouts"
+  />
+</Frame>
+
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Audio File** | Play the recording without leaving the report. |
+| 2 | **Summary · Reasoning · Suggestion** | What happened on the call, why each parameter scored as it did, and how the agent can improve. Click **Show More** to expand. |
+| 3 | **Add parameter** | Create a custom parameter for something this report didn't check. It will be evaluated on every future call. |
+
+## Edit a score
+
+Reviewers can correct the AI when needed.
+
+<Frame caption="File Report in edit mode">
+  <img
+    src="/images/guide-call-report-edit.jpg"
+    alt="Call report in edit mode with numbered callouts"
+  />
+</Frame>
+
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Fatal Incident toggle** | Turn on to void the call (score zero), or off to restore a call flagged by mistake. |
+| 2 | **Work Code** | Select the correct work code if the AI chose the wrong one. |
+| 3 | **Score pencil** | Click to change the obtained score for a category or parameter. |
+| 4 | **Back** | Leave edit mode. |
+
+<Steps>
+  <Step title="Open the report and click Edit">
+    The report switches to edit mode.
+  </Step>
+  <Step title="Make your corrections">
+    Change scores, the work code, or the fatal incident status.
+  </Step>
+  <Step title="Leave edit mode">
+    Click **Back**. The call's status changes to **Updated**.
+  </Step>
+  <Step title="Mark as reviewed">
+    Click **Mark as Reviewed** so your team knows the call has been checked.
+  </Step>
+</Steps>
+
+## Handle score appeals
+
+When an agent disagrees with a score, they can appeal it. Appealed calls are counted under **Appealed for Review**.
+
+<Steps>
+  <Step title="Find appealed calls">
+    Click **Filters**, turn on **Appealed for Review**, and click **Apply Filters**.
+  </Step>
+  <Step title="Open the call">
+    Review the agent's appeal from the report.
+  </Step>
+  <Step title="Respond">
+    Respond to the appeal and correct the score if needed. The call moves to **Appeal Resolved**.
+  </Step>
+</Steps>
+
+## Download or email reports in bulk
+
+Click **Bulk Download** to export many reports at once.
+
+<Frame caption="Bulk Export dialog">
+  <img
+    src="/images/guide-bulk-export.jpg"
+    alt="Bulk Export dialog with numbered callouts"
+  />
+</Frame>
+
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Date** | Choose **Single Day** or a range, then pick the date(s). Leave empty to export everything. |
+| 2 | **Agent · Department · Specialized Parameter** | Optional filters to narrow the export. |
+| 3 | **File Type** | **PDF** for full reports, **CSV** for a spreadsheet of scores. |
+| 4 | **Cancel · Send Email · Download** | Close the dialog, email the reports, or download the file. |

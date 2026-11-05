@@ -1,105 +1,78 @@
 ---
 title: "Agent Reports"
-description: "Generate and download monthly performance reports for individual agents."
+description: "Generate branded monthly performance reports for each agent to support coaching and reviews."
+icon: "file-chart-column"
 ---
 
-# Agent Reports
+**Reports** creates a monthly **Agent Performance Report** for any agent — a branded, multi-page PDF with parameter-level scoring, month-over-month trends, strengths and gaps, and a coaching playbook.
 
-The **Agent Reports** page allows you to generate comprehensive, branded monthly performance reports for your agents. These reports combine all QA data, call scores, and parameter-level insights into a downloadable PDF.
+**To open it:** in the sidebar, under **Operations**, click **Reports**.
 
-<Note>
-Agents appear on this page automatically based on the **Agent Name** provided during the [Call Upload](/Pages/callUpload) process.
-</Note>
+<Frame caption="Agent Reports page">
+  <img
+    src="/images/guide-agent-reports.jpg"
+    alt="Agent Reports page with numbered callouts"
+  />
+</Frame>
 
-## Step-by-Step Guide
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Month selector** | Choose the reporting month. The current month is marked _(Partial)_. |
+| 2 | **Monthly Report Subscription** | Must be **Enabled** before you can generate reports. |
+| 3 | **Download · Generate (\$1)** | Generate a report for an agent, or download one that's already generated. |
+| 4 | **Sample Report** | Preview the report layout. Click **Download sample** for a free PDF. |
+
+The page also shows **Total Agents**, the number of reports **generated** for the selected month, and a searchable table of every agent with their department and **Report Status** (_Not generated_ or _Generated_ with a date and time).
+
+## Generate a report
 
 <Steps>
-  <Step title="Enable Report Subscriptions">
-    By default, new accounts have the **Monthly Report Subscription** toggled **Off**. 
-
-    <Frame>
-      <img src="/Images/AgentReports/Report-toggle.png" alt="Monthly Report Subscription toggle switched to Enabled" />
-    </Frame>
-
-    Toggle the switch to **Enabled** to activate the report generation feature for your agents.
+  <Step title="Choose the month">
+    Use the month selector in the top-right corner.
   </Step>
-
-  <Step title="Select the Reporting Period">
-    Use the dropdown menu in the top-right corner to select the month and year you want to generate the report for. 
-
-    <Frame>
-      <img src="/Images/AgentReports/Report-SelectMonths.png" alt="Selecting the reporting month from the dropdown" />
-    </Frame>
-
-    <Tip>
-    If you select the current month, Xperia will display a notice indicating it is a **Partial month** (e.g., *October 1–29*). You can regenerate the report at any time to get the most up-to-date data.
-    </Tip>
+  <Step title="Find the agent">
+    Search by agent name, ID, or department, or page through the table.
   </Step>
-
-  <Step title="Locate the Agent">
-    Use the search bar above the table to find a specific agent by name or ID. The table displays:
-    - **Agent:** The agent's name.
-    - **Department:** The department they belong to.
-    - **Report Status:** Whether the report is "Not generated" or "Generated" (with the date).
-
-    <Frame>
-      <img src="/Images/AgentReports/Report-SearchAgent.png" alt="Searching for an agent in the reports table" />
-    </Frame>
+  <Step title="Generate">
+    Click **Generate (\$1)** in the agent's row. The status changes to **Generated**.
   </Step>
-
-  <Step title="Generate the Report">
-    Click the yellow **$ Generate ($1)** button next to the agent's name. 
-
-    <Frame>
-      <img src="/Images/AgentReports/Report-GenerateBtn.png" alt="Clicking the Generate button next to an agent's name" />
-    </Frame>
-
-    Xperia will begin compiling the agent's data. This process may take a few moments.
-  </Step>
-
-  <Step title="Send Report via Email">
-    Once the report is generated, a modal will open asking for delivery details.
-    
-    <Frame>
-      <img src="/Images/AgentReports/Report-SendEmailBtn.png" alt="Entering recipient and CC email addresses in the modal" />
-    </Frame>
-
-    1. Enter the **Recipient's Email** address.
-    2. (Optional) Enter a **CC Email** address.
-    3. Confirm the action to send the report directly to their inbox.
-  </Step>
-
-  <Step title="Download the Report">
-    Once generated, the **Report Status** will change to **Generated**, and a **Download** button will appear next to the Generate button. 
-
-    <Frame>
-      <img src="/Images/AgentReports/Report-DownloadBtn.png" alt="Download button appearing for a generated report" />
-    </Frame>
-
-    Click **Download** to save the branded PDF report to your device.
+  <Step title="Download">
+    Click **Download** to save the PDF.
   </Step>
 </Steps>
 
-## Pricing and Generation Rules
+<Info>
+  **Partial month:** for the current month, a banner shows which days are included (for example _November 1 – 5_). Click **Generate** again later to get an updated report.
+</Info>
 
-Generating a report incurs a small fee, billed to your account balance:
+## Pricing
 
-- **Generating a Report:** Costs **$1.00**.
-- **Downloading the Same Report:** If a report is already generated for a specific month, downloading it again is **Free**.
-- **Regenerating Current Month:** For the current active month, you can regenerate the report at any time to update the data. Each regeneration costs **$1.00**.
+| Action | Cost |
+| --- | --- |
+| Generate a report for an agent and month | **\$1.00** |
+| Download a report you already generated | **Free** |
+| Regenerate the current month with newer data | **\$1.00** each time |
 
-## Previewing the Report
+## What's inside the report
 
-Before spending credits, you can preview what an agent report looks like. On the right side of the screen, the **Sample Report** panel shows a visual preview of the PDF. 
+<CardGroup cols={2}>
+  <Card title="Overall score" icon="gauge">
+    The agent's average score for the month.
+  </Card>
 
-<Frame>
-  <img src="/Images/AgentReports/Report-DownloadSampleBtn.png" alt="Sample Report panel showing a preview of the PDF format" />
-</Frame>
+  <Card title="Parameter-wise scoring" icon="list-check">
+    Performance on every parameter across all calls.
+  </Card>
 
-Click the **Download sample** button to view a complete example.
+  <Card title="Month-over-month trends" icon="chart-line">
+    How the agent is improving over time.
+  </Card>
 
-## Related Topics
+  <Card title="Coaching playbook" icon="graduation-cap">
+    Strengths, gaps, and recommended next steps.
+  </Card>
+</CardGroup>
 
-- [Call Scoring](/Pages/callScoring) — Review individual call scores that contribute to the monthly report.
-- [Call Upload](/Pages/callUpload) — Ensure agent names are correctly assigned during upload.
-- [Billing](/Pages/billing) — Manage your account balance for report generation.
+<Tip>
+  Prefer to receive these automatically? Add the agent under **Agent Email Settings** in [Reports & Alerts](/Pages/Fatal_Alerts) and turn on **Monthly (Agent Reports)**.
+</Tip>

@@ -1,184 +1,125 @@
 ---
 title: "Specialized Parameters"
-description: "Create Fatal Incidents and Trackers to monitor important call conditions."
+description: "Void calls automatically with fatal incident conditions, and monitor every call for business signals with trackers."
+icon: "shield-halved"
 ---
 
-# Specialized Parameters
+Specialized parameters are QA concepts with their own definitions, separate from the weighted scorecard.
 
-## What are Specialized Parameters?
+**To open them:** go to **Parameter** → **Specialized Parameter**.
 
-Specialized Parameters help you monitor specific things that happen during calls.
+There are two kinds:
 
-There are two types:
+|  | **Fatal Incident** | **Trackers** |
+| --- | --- | --- |
+| **Purpose** | Catch serious breaches that should never happen | Watch for business signals — risks or opportunities |
+| **Effect on score** | Call is voided and scored **zero** | **None** — counted for insight only |
+| **Cost** | Free | Paid, per call minute |
+| **Examples** | Abusive language, missed disclosure, agent hung up on the customer | Churn risk, upsell opportunity, customer dissatisfaction |
 
-- **Fatal Incidents** — serious issues that can make a call invalid.
-- **Trackers** — specific things you want to monitor for insights without affecting the agent's score.
+## Fatal incidents
 
----
+<Frame caption="Fatal Incident tab">
+  <img
+    src="/images/guide-fatal-incidents.jpg"
+    alt="Fatal Incident tab with numbered callouts"
+  />
+</Frame>
 
-## Fatal Incidents
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Fatal Incident · Trackers** | Switch between the two kinds of specialized parameters. |
+| 2 | **Add condition** | Create a new fatal incident condition. |
+| 3 | **Set up fatal incident email alerts** | Shortcut to [Reports & Alerts](/Pages/Fatal_Alerts). |
+| 4 | **Edit · Delete** | Change or remove a condition. |
 
-Fatal Incidents are serious issues, such as **abusive language** or a **missed disclosure**, that should not happen on a call.
+If **any** condition is detected on a call, Xperia voids the call and scores it zero. In Call Scoring the score shows **Fatal Incident** in red, and the Dashboard counts it under **Fatal Incidents**.
 
-If a Fatal Incident is detected, the call is **voided and scored zero**.
+### Example conditions
 
-Adding Fatal Incidents is free.
+| Condition | Triggers when… |
+| --- | --- |
+| **Agent Used Abusive Language** | The agent uses insulting, threatening, or abusive language. |
+| **Compliance Disclosure Missed** | A required legal or compliance disclosure is not read. |
+| **Agent Abruptly Terminated Call** | The agent disconnects mid-conversation without resolving the issue. |
+| **Agent Misguided the Customer** | The agent deliberately gives false or misleading information. |
 
-### How to Add a Fatal Incident
+### Add a condition
 
 <Steps>
 
-<Step title="Open Specialized Parameters">
+<Step title="Click Add condition">
 
-Open **Specialized Parameters** from the menu.
-
-![Open Specialized Parameters](/Images/SpecializeParameter/OpenSpecializepara.png)
+A form opens above the list.
 
 </Step>
 
-<Step title="Open Fatal Incidents">
+<Step title="Name the condition">
 
-The **Fatal Incidents** tab is selected automatically.
-
-![Fatal Incidents tab](/Images/SpecializeParameter/Fatal-Incident.png)
+For example, _Agent Used Abusive Language_.
 
 </Step>
 
-<Step title="Click Add Condition">
+<Step title="Describe what should trigger it">
 
-Click **Add Condition** to create a new Fatal Incident.
-
-![Add Condition button](/Images/SpecializeParameter/FI-Addbtn.png)
+Be specific: _Agent uses abusive, insulting, or inappropriate language._
 
 </Step>
 
-<Step title="Enter the Condition Name & Add the Trigger Description" >
+<Step title="Save">
 
-Enter a name for the condition.
-
-Add a short description explaining what should trigger the condition.
-
-For example:
-
-**Agent Used Abusive Language**
-
-**Agent uses abusive, insulting, or inappropriate language.**
-
-![Condition name](/Images/SpecializeParameter/FI-Enterfield.png)
+Click **Add condition**. It applies to calls scored from now on.
 
 
-
-</Step>
-
-
-
-<Step title="Save the Condition">
-
-Save the condition to add it to your Fatal Incidents.
-
-![Save Fatal Incident](/Images/SpecializeParameter/FI-Save.png)
 
 </Step>
 
 </Steps>
 
----
+<Warning>
+  Keep conditions narrow and specific. A broad condition such as "agent sounded rude" can void many legitimate calls. If a call is flagged by mistake, a reviewer can turn off the **Fatal Incident** toggle in the report's edit mode.
+</Warning>
 
 ## Trackers
 
-Trackers are specialized parameters that you can watch on every call.
+<Frame caption="Trackers tab">
+  <img
+    src="/images/guide-trackers.jpg"
+    alt="Trackers tab with numbered callouts"
+  />
+</Frame>
 
-For example, you can create a Tracker for **churn risk**.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Create Specialized Parameter** | Create a new tracker. |
+| 2 | **Cost** | Extra charge per call minute while the tracker is on. |
+| 3 | **On/Off · Edit** | Pause or resume the tracker, or edit its definition. |
 
-Trackers are used for insights and **do not affect the agent's score**.
+The **Summary** column shows what each tracker looks for and who last edited it.
 
-### How to Create a Tracker
+### Create a tracker
 
-<Steps>
+<Frame caption="Add Specialized Parameter dialog">
+  <img
+    src="/images/guide-tracker-create.jpg"
+    alt="Add Specialized Parameter dialog with numbered callouts"
+  />
+</Frame>
 
-<Step title="Open the Trackers Tab">
+| # | Field | Description |
+| :-: | --- | --- |
+| 1 | **Name** | For example, _Refund Risk_. |
+| 2 | **Describe what it should look for** | For example, _Flag calls where the customer asks for a refund and seems likely to escalate if denied._ |
+| 3 | **Warning sign · Positive signal** | Whether a match is bad news (red) or good news (green). |
+| 4 | **Generate** | Xperia writes the full definition for you to review and save. |
 
-Go to the **Trackers** tab under Specialized Parameters.
+### Where tracker results appear
 
-![Trackers tab](/Images/SpecializeParameter/Trackers.png)
+- **Call reports** — matched trackers appear as tags under _Call Details_.
+- **Dashboard → Specialized Parameters** — flagged vs. total calls; click a bar or **View calls** to see them.
+- **Call Scoring → Filters** — filter by **Specialized Parameter**.
+- **Bulk Download** — export only calls flagged by a tracker.
 
-</Step>
-
-<Step title="Click Create Specialized Parameter">
-
-Click **Create Specialized Parameter**.
-
-![Create Specialized Parameter button](/Images/SpecializeParameter/Tracker-Addbtn.png)
-
-</Step>
-
-<Step title="Enter the Parameter Name">
-
-Enter a name for your specialized parameter.
-
-For example:
-
-**Churn Risk**
-
-![Parameter name](/Images/SpecializeParameter/EnterName.png)
-
-</Step>
-
-<Step title="Add a Description">
-
-Add a short description explaining what the parameter is about.
-
-![Parameter description](/Images/SpecializeParameter/Enterdescription.png)
-
-</Step>
-
-<Step title="Select Indicators">
-
-Choose the indicators you want to track.
-
-You can select:
-
-- **Warning Sign**
-- **Positive Signal**
-
-![Select indicators](/Images/SpecializeParameter/Selectindicator.png)
-
-</Step>
-
-<Step title="Click Generate">
-
-Click **Generate** to create the parameter description based on your information.
-
-![Generate parameter](/Images/SpecializeParameter/Clickgenerate.png)
-
-</Step>
-
-<Step title="Click Add Parameter">
-
-Review the generated information and click **Add Parameter**.
-
-Your new Tracker will be added to the list.
-
-![Add Parameter button](/Images/SpecializeParameter/Clickaddpara.png)
-
-</Step>
-
-</Steps>
-
----
-
-## How They Work
-
-### Fatal Incidents
-
-If a configured Fatal Incident is detected:
-
-**Call → Fatal Incident detected → Call is voided → Score = 0**
-
-### Trackers
-
-If a Tracker is detected:
-
-**Call → Tracker detected → Insight is recorded → Agent score is not affected**
-
-> **Note:** Fatal Incidents can affect the call score, while Trackers are used only for insights and do not affect the agent's scoring.
+<Tip>
+  Switch a tracker **Off** to stop paying for it without losing its definition.
+</Tip>

@@ -1,103 +1,90 @@
 ---
-title: "Fatal Alerts"
-
-description: "Configure email notifications for calls identified as fatal incidents."
+title: "Reports & Alerts"
+description: "Automatically email monthly agent reports, daily call reports, and instant fatal incident alerts."
+icon: "envelope"
 ---
 
-# Fatal Alerts
+**Mail Config** opens **Reports Subscriptions**, where you choose which reports Xperia emails automatically and who receives them. Manual downloads remain available in [Agent Reports](/Pages/agentReports) and [Call Scoring](/Pages/callScoring).
 
-## What are Fatal Alerts?
+**To open it:** in the sidebar, under **Configuration**, click **Mail Config**.
 
-Fatal Alerts help **supervisors stay informed about fatal calls** by sending an email notification when a call is identified and scored as a **fatal incident**.
+<Frame caption="Reports Subscriptions page">
+  <img
+    src="/images/guide-report-subscriptions.jpg"
+    alt="Reports Subscriptions page with numbered callouts"
+  />
+</Frame>
 
-The notification contains the call's **report and summary**, allowing supervisors to review the incident and take the necessary action.
+| # | Element | Description |
+| :-: | --- | --- |
+| 1 | **Report tabs** | **Agent Reports** (\$1/mo), **Call Reports** (Free), and **Fatal Alerts** (Free). |
+| 2 | **Download sample report** | Free preview of the selected report. |
+| 3 | **Add Agent** | Register an agent to receive reports by email. |
 
-## How to Configure Fatal Alerts
+## Report types
 
-<Steps>
+<Tabs>
+  <Tab title="Agent Reports">
+    **Monthly Agent Performance Report** — a branded multi-page PDF for each agent, including:
 
-  <Step title="Open Mail Config">
+    - Parameter-wise scoring across all calls
+    - Month-over-month performance trends
+    - Strengths, gaps, and a coaching playbook
 
-    Open the **Mail Config** page from the menu.
+    **Cost:** \$1.00 per report the first time it is generated (by email or manual download). Re-sends and re-downloads are free.
+  </Tab>
+  <Tab title="Call Reports">
+    **Daily Call Scoring Report** — a per-call PDF emailed automatically every morning, including:
 
-    ![Mail Config page](/Images/FatalAlerts/Mail_Config.png)
+    - The full 10-category QA scorecard
+    - AI summary, suggestions, and reasoning
 
-  </Step>
+    **Cost:** free.
+  </Tab>
+  <Tab title="Fatal Alerts">
+    **Fatal Incident Alerts** email the call's report and summary **the moment** a call is scored as a fatal incident.
 
-  <Step title="Open Fatal Alerts">
+    1. Turn on the **Fatal Incident Alerts** toggle.
+    2. Under **Recipients (To)**, type an email address and click **\+**. Repeat for additional recipients.
+    3. Optionally add **CC Recipients** the same way.
+    4. Click **Save changes**.
 
-    On the **Reports Subscriptions** page, click the **Fatal Alerts** tab.
+    Use the pencil next to an address to edit it, or **×** to remove it.
 
-    ![Fatal Alerts tab](/Images/FatalAlerts/Mail_Config_FA.png)
+    **Cost:** free.
+  </Tab>
+</Tabs>
 
-  </Step>
+## Agent email settings
 
-  <Step title="Enable Fatal Incident Alerts">
+The **Agent Email Settings** table at the bottom of the page controls which agents receive reports and where they're sent.
 
-    Turn on the **Fatal Incident Alerts** toggle.
+| Column | Description |
+| --- | --- |
+| **Agent** | The agent the reports are about. |
+| **Recipients** | Addresses that receive the reports; the primary address is labelled _Main_. |
+| **Daily (Call Reports)** | Toggle on to email the agent's call reports every morning. |
+| **Monthly (Agent Reports)** | Toggle on to email the monthly performance report. |
+| **Actions** | Edit (pencil) or remove (bin). |
 
-    Once enabled, Xperia can send email notifications when a call is identified as a fatal incident.
+### Add an agent
 
-    ![Enable Fatal Alerts](/Images/FatalAlerts/Mail_Config_toggleBtn.png)
+<Frame caption="Add New Agent dialog">
+  <img
+    src="/images/guide-mail-add-agent.jpg"
+    alt="Add New Agent dialog with numbered callouts"
+  />
+</Frame>
 
-  </Step>
+| # | Field | Description |
+| :-: | --- | --- |
+| 1 | **Agent Name** | Type a name or choose an agent from the list. |
+| 2 | **To (Agent Email)** | The main recipient, usually the agent. |
+| 3 | **CC Recipients** | Additional recipients such as a team lead or QA manager. Type an address and click **\+**. |
+| 4 | **Add Agent** | Saves the agent. |
 
-  <Step title="Add Recipient Email">
+After adding the agent, use the **Daily** and **Monthly** toggles in the table to choose which reports they receive.
 
-    Under **Recipients (To)**, enter the email address that should receive fatal incident notifications.
-
-    Click the **+** button to add the email address.
-
-    You can add multiple recipient email addresses if required.
-
-    ![Add recipient email](/Images/FatalAlerts/Mail_Config_recipientemail.png)
-
-  </Step>
-
-  <Step title="Add CC Recipients">
-
-    If another person should receive a copy of the notification, enter their email address under **CC Recipients**.
-
-    Click the **+** button to add the email address.
-
-    **CC Recipients are optional.**
-
-    ![Add CC recipient](/Images/FatalAlerts/Mail_Config_ccrecipient.png)
-
-  </Step>
-
-  <Step title="Save Your Changes">
-
-    Click **Save changes** to save the Fatal Alerts configuration.
-
-    ![Save Fatal Alerts](/Images/FatalAlerts/Mail_Config_savebtn.png)
-
-  </Step>
-
-</Steps>
-
-## How It Works
-
-Once Fatal Alerts are configured, Xperia automatically monitors the results of uploaded calls.
-
-When a call is identified as a **fatal incident**, Xperia sends an email notification to the configured recipients.
-
-The notification process is:
-
-**Call Uploaded → Call Analyzed → Fatal Incident Detected → Email Alert Sent → Supervisor Reviews Call**
-
-The supervisor can then review the **call report and summary** included in the notification.
-
-> **Note:** Fatal Alert emails are sent only when Fatal Alerts are enabled and at least one recipient email address has been configured and saved.
-
-## Recipient Settings
-
-| Setting | Description |
-|---|---|
-| **Fatal Incident Alerts** | Enables or disables fatal incident email notifications. |
-| **Recipients (To)** | Email addresses that receive the fatal incident notification. |
-| **CC Recipients** | Optional email addresses that receive a copy of the notification. |
-| **+** | Adds the entered email address to the recipient list. |
-| **Save changes** | Saves the Fatal Alerts configuration. |
-
-> **Note:** If no recipient email address is configured, no Fatal Alert email will be sent.
+<Tip>
+  Use the **Search agents** box above the table to find an agent quickly.
+</Tip>

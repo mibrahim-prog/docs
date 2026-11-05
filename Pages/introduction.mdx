@@ -1,33 +1,120 @@
-# Xperia Documentation
+---
+title: "Introduction"
+description: "Xperia is Najoomi's AI-powered call quality assurance platform. It scores every customer call automatically so your QA team can stop sampling and start coaching."
+icon: "house"
+---
 
-## AI-Powered Call Quality Assurance
+Welcome to the **Xperia User Guide**. This guide explains every screen in the Xperia portal — what it does, what each option means, and how to complete common tasks step by step.
 
-Xperia is an AI-powered call quality assurance platform that helps contact centers
-analyze, score, and improve customer conversations at scale.
+## What is Xperia?
 
-Instead of manually reviewing a small sample of calls, Xperia analyzes calls against
-configurable quality criteria and provides detailed scores, insights, summaries,
-and actionable feedback.
+Xperia is an AI-powered call quality assurance (QA) platform. Instead of manually reviewing a small sample of calls, you upload recordings — or connect your call system — and Xperia scores **every** call against your QA scorecard. Each call receives:
 
-### What you can do with Xperia
+- A **score out of 100**, broken down by category and parameter
+- An AI-written **summary** of the conversation
+- The **reasoning** behind every score
+- Practical **coaching suggestions** for the agent
+- Flags for **fatal incidents** and business signals such as churn risk
 
-- **Analyze calls** — Upload recordings or integrate Xperia with your existing
-  telephony systems.
-- **Score agents automatically** — Evaluate calls against configurable quality
-  parameters and scorecards.
-- **Monitor performance** — Track agent performance, call quality, trends,
-  and key metrics through analytics dashboards.
-- **Create custom parameters** — Define your own quality requirements for
-  specific business processes or teams.
-- **Review call results** — View scores, summaries, feedback, and detailed
-  call-level evaluations.
-- **Manage access** — Control what users can access through role-based
-  permissions.
-- **Analyze multilingual calls** — Process conversations across multiple
-  languages, including conversations that switch languages.
-- **Integrate with your systems** — Connect Xperia with telephony and
-  communication platforms to automate call ingestion.
+## How Xperia works
 
-Xperia is designed for QA teams, supervisors, contact-center managers, and
-organizations that want to improve agent performance and customer service
-using AI-driven call analysis.
+<Steps>
+  <Step title="Bring calls in">
+    Upload recordings manually from [Upload Calls](/Pages/callUpload), or connect your phone system with the [Integrator](/Pages/integrations) so calls arrive automatically.
+  </Step>
+  <Step title="Xperia scores every call">
+    Each call is transcribed and evaluated against your scorecard: standard **categories**, your own **custom parameters**, **fatal incident** conditions, and **trackers**.
+  </Step>
+  <Step title="Review the results">
+    Open any call in [Call Scoring](/Pages/callScoring) to see the full report, adjust scores if needed, and mark it as reviewed.
+  </Step>
+  <Step title="Act on the insights">
+    Track performance on the [Dashboard](/Pages/dashboard), send monthly [Agent Reports](/Pages/agentReports), receive instant [fatal incident alerts](/Pages/Fatal_Alerts), and ask questions with the [AI Assistant](/Pages/aiAssistant).
+  </Step>
+</Steps>
+
+## Find your way around
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/Pages/quickstart">
+    Score your first call in under five minutes.
+  </Card>
+
+  <Card title="Dashboard" icon="chart-line" href="/Pages/dashboard">
+    Monitor scores, trends, and agent performance.
+  </Card>
+
+  <Card title="Upload Calls" icon="upload" href="/Pages/callUpload">
+    Send recordings to Xperia for scoring.
+  </Card>
+
+  <Card title={"Call Scoring & Reports"} icon="list-check" href="/Pages/callScoring">
+    Review, edit, and export call reports.
+  </Card>
+
+  <Card title="Scoring Parameters" icon="sliders" href="/Pages/customParameters">
+    Decide what Xperia checks and how many points it's worth.
+  </Card>
+
+  <Card title="AI Assistant" icon="robot" href="/Pages/aiAssistant">
+    Ask questions about your call data in plain language.
+  </Card>
+</CardGroup>
+
+## The portal at a glance
+
+The sidebar on the left is organized into three sections:
+
+| Section | Pages | Purpose |
+| --- | --- | --- |
+| **Main** | Getting Started, Dashboard | Onboarding and performance analytics |
+| **Operations** | Call Upload, Call Scoring, Reports | The day-to-day QA workflow |
+| **Configuration** | Parameter, Departments, Retention, Work Codes, Billing, Integrator, Mail Config, Security, Audio Config, Users | Workspace setup and administration |
+
+Controls available on every page:
+
+| Control | Location | What it does |
+| --- | --- | --- |
+| **Theme toggle** | Top-right (moon/sun icon) | Switches between dark and light mode. |
+| **AI Assistant** | Bottom-right (chat bubble) | Opens the _Talk to Your Data_ assistant. |
+| **Pin sidebar** | Next to **Logout** | Keeps the sidebar expanded or lets it collapse. |
+| **Logout** | Bottom of the sidebar | Signs you out of Xperia. |
+
+## Key terms
+
+<AccordionGroup>
+  <Accordion title="Category" icon="layer-group">
+    A built-in scoring area — Call Opening, Closing, Communication, Hold Procedure, Listening, Personalisation, Probing, Responsibility, Tone, or Upselling. Categories share the 100-point total.
+  </Accordion>
+
+  <Accordion title="Custom parameter" icon="sliders">
+    A check you define in plain language (for example, _agent did not verify the customer's identity_). It is added to the scorecard and affects the score.
+  </Accordion>
+
+  <Accordion title="Fatal incident" icon="triangle-exclamation">
+    A serious breach, such as abusive language or a missed compliance disclosure. A fatal incident voids the call and scores it **zero**.
+  </Accordion>
+
+  <Accordion title="Tracker" icon="satellite-dish">
+    A specialized parameter, such as Churn Risk, that is watched on every call for insight only. Trackers **do not** affect the score.
+  </Accordion>
+
+  <Accordion title="Department" icon="building">
+    A team such as Inbound or Sales. Each department can have its own parameters and weightage.
+  </Accordion>
+
+  <Accordion title="Work code" icon="hashtag">
+    A short label describing what a call was about, for example _order delivery issue_.
+  </Accordion>
+
+  <Accordion title="Call type" icon="phone">
+    Xperia handles **Human** agent calls and **AI** agent calls separately. Most screens include a Call Type filter.
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+- Use the **Feedback** button on the Getting Started page to contact the Xperia team.
+- Watch the **Guided Tutorial** under _Help & Resources_ on the Getting Started page.
+- See [FAQ & Troubleshooting](/Pages/faq).
+- Email [hello@najoomi.ai](mailto:hello@najoomi.ai).

@@ -1,0 +1,85 @@
+---
+title: "FAQ & Troubleshooting"
+description: "Answers to common questions and fixes for common issues in Xperia."
+icon: "circle-question"
+---
+
+## Scoring
+
+<AccordionGroup>
+  <Accordion title="How is a call's score calculated?">
+    Each call is scored out of 100. The points are distributed across categories and parameters on the [Categories Weightage](/Pages/customParameters#categories-weightage) tab for the call's call type and department. The **Total Score** on the report is the sum of the points earned.
+  </Accordion>
+
+  <Accordion title="Why does a call show a score of zero and 'Fatal Incident'?">
+    The call matched one of your [fatal incident conditions](/Pages/specializaParameters#fatal-incidents), which voids the call. If it was flagged by mistake, open the report, click **Edit**, and turn off the **Fatal Incident** toggle.
+  </Accordion>
+
+  <Accordion title="Do trackers affect the score?">
+    No. Trackers are for insight only. Only categories, custom parameters, and fatal incidents affect the score.
+  </Accordion>
+
+  <Accordion title="I changed the weightage. Why didn't old calls change?">
+    Weightage and parameter changes apply to calls scored **from now on**. Existing scores are kept.
+  </Accordion>
+
+  <Accordion title="The AI scored a call incorrectly. What should I do?">
+    Open the report, click **Edit**, correct the score, then click **Mark as Reviewed**. If the same mistake keeps happening, refine the parameter's description on the [Parameter](/Pages/customParameters) page.
+  </Accordion>
+</AccordionGroup>
+
+## Uploads and integrations
+
+<AccordionGroup>
+  <Accordion title="Which audio files can I upload?">
+    MP3 or WAV files under 50 MB each. You can upload several files at once.
+  </Accordion>
+
+  <Accordion title="A call shows 'Error while processing!'">
+    The recording couldn't be scored, usually because the audio is corrupt or silent. Re-upload the original file, and contact support with the file name if it fails again.
+  </Accordion>
+
+  <Accordion title="Calls aren't arriving from my phone system">
+    On the [Integrator](/Pages/integrations), check that **Integrator Status** is **Active**, that **Processing Data From** is set correctly, that the **Daily Percentage** and **Daily Limit** aren't too low, and that your **Filters** aren't excluding the calls.
+  </Accordion>
+
+  <Accordion title="The agent is being scored on what the customer said">
+    Your stereo channel is probably swapped. Check [Audio Configuration](/Pages/audioConfig) and select the correct agent channel.
+  </Accordion>
+</AccordionGroup>
+
+## Reports and alerts
+
+<AccordionGroup>
+  <Accordion title="How much do agent reports cost?">
+    \$1.00 per agent per month the first time a report is generated. Re-downloading is free. Regenerating the current month for newer data costs \$1.00 each time.
+  </Accordion>
+
+  <Accordion title="How do I get notified about fatal incidents?">
+    Go to **Mail Config → Fatal Alerts**, turn on **Fatal Incident Alerts**, add recipients, and click **Save changes**. See [Reports & Alerts](/Pages/Fatal_Alerts).
+  </Accordion>
+
+  <Accordion title="How do I export many reports at once?">
+    On [Call Scoring](/Pages/callScoring#download-or-email-reports-in-bulk), click **Bulk Download**, choose dates and filters, pick PDF or CSV, then **Download** or **Send Email**.
+  </Accordion>
+</AccordionGroup>
+
+## Access and account
+
+<AccordionGroup>
+  <Accordion title="I can't see some pages in the sidebar">
+    Your role limits what you can access. **Secondary** users can only upload, view, and download; **Primary** users can't manage users, billing, retention, or security. Ask an Admin to change your role. See [Users & Roles](/Pages/usersAndRoles).
+  </Accordion>
+
+  <Accordion title="The AI Assistant says 'Subscription Expired'">
+    The AI Assistant subscription needs to be renewed. An Admin can do this from [Billing & Subscription](/Pages/billing).
+  </Accordion>
+
+  <Accordion title="How do I switch between dark and light mode?">
+    Click the moon/sun icon in the top-right corner.
+  </Accordion>
+</AccordionGroup>
+
+## Still need help?
+
+Email [hello@najoomi.ai](mailto:hello@najoomi.ai) or use the **Feedback** button on the Getting Started page.
